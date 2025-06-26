@@ -7,11 +7,11 @@ export default function PricingPage() {
   return (
     <div className="flex flex-col gap-y-20">
       <div className="">
-        <div className="px-12 py-8 flex flex-col gap-5">
-          <h1 className={`${title()} font-semibold  `}>
+        <div className="flex flex-col gap-5 px-12 py-8">
+          <h1 className={`${title()} font-semibold`}>
             CHOOSE THE PERFECT PLAN TO MATCH YOUR GOALS
           </h1>
-          <p className="text-lg tracking-wide font-semibold  text-gray-400">
+          <p className="text-lg font-semibold tracking-wide text-gray-400">
             Wherever you are on your music journey, we've got a plan for you
           </p>
         </div>

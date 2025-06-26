@@ -9,11 +9,11 @@ export const YoutubeMonetizationSteps = [
   {
     title: 'Step 1',
     content: (
-      <div className="flex justify-center  flex-col items-center ">
+      <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col gap-4">
           <h1 className={title()}>Sign up</h1>
         </div>
-        <p className="text-2xl max-w-2xl leading-10 mt-24 font-semibold dark:text-neutral-400 text-neutral-500">
+        <p className="mt-24 max-w-2xl text-2xl font-semibold leading-10 text-neutral-500 dark:text-neutral-400">
           Create your HarDan Music account today and distribute music to
           multiple stores right from our dashboard. It's as easy as one, two, or
           three
@@ -24,11 +24,11 @@ export const YoutubeMonetizationSteps = [
   {
     title: 'Step 2',
     content: (
-      <div className="flex justify-center  flex-col items-center ">
+      <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col gap-4">
           <h1 className={title()}>Apply for Channel Management</h1>
         </div>
-        <p className="text-2xl max-w-2xl leading-10 mt-24 font-semibold dark:text-neutral-400 text-neutral-500">
+        <p className="mt-24 max-w-2xl text-2xl font-semibold leading-10 text-neutral-500 dark:text-neutral-400">
           Efficiently manage your YouTube channels and get the best out of them
           with the help of an expert team for YouTube.
         </p>
@@ -38,11 +38,11 @@ export const YoutubeMonetizationSteps = [
   {
     title: 'Step 3',
     content: (
-      <div className="flex justify-center  flex-col items-center ">
+      <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col gap-4">
           <h1 className={title()}>Apply for YouTube Channel Monetization</h1>
         </div>
-        <p className="text-2xl max-w-2xl leading-10 mt-24 font-semibold dark:text-neutral-400 text-neutral-500">
+        <p className="mt-24 max-w-2xl text-2xl font-semibold leading-10 text-neutral-500 dark:text-neutral-400">
           We help you deliver your music to YouTube Content ID and monetize
           every track you own, claiming 100% music rights & royalties.
         </p>
@@ -52,11 +52,11 @@ export const YoutubeMonetizationSteps = [
   {
     title: 'Step 4',
     content: (
-      <div className="flex justify-center  flex-col items-center ">
+      <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col gap-4">
           <h1 className={title({})}>Upload Your Music</h1>
         </div>
-        <p className="text-2xl max-w-2xl leading-10 mt-24 font-semibold dark:text-neutral-400 text-neutral-500">
+        <p className="mt-24 max-w-2xl text-2xl font-semibold leading-10 text-neutral-500 dark:text-neutral-400">
           Upload your music to HarDan music and provide detailed info like track
           name, artist name, artwork, and more.
         </p>
@@ -66,11 +66,11 @@ export const YoutubeMonetizationSteps = [
   {
     title: 'Step 5',
     content: (
-      <div className="flex justify-center  flex-col items-center ">
+      <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col gap-4">
           <h1 className={title({})}>Your music on YouTube</h1>
         </div>
-        <p className="text-2xl max-w-2xl leading-10 mt-24 font-semibold dark:text-neutral-400 text-neutral-500">
+        <p className="mt-24 max-w-2xl text-2xl font-semibold leading-10 text-neutral-500 dark:text-neutral-400">
           We will send your songs to YouTube to get a unique Content ID to track
           your soundtracks easily.
         </p>
@@ -80,11 +80,11 @@ export const YoutubeMonetizationSteps = [
   {
     title: 'Step 6',
     content: (
-      <div className="flex justify-center  flex-col items-center ">
+      <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col gap-4">
           <h1 className={title({})}>Let YouTube do the work for you</h1>
         </div>
-        <p className="text-2xl max-w-2xl leading-10 mt-24 font-semibold dark:text-neutral-400 text-neutral-500">
+        <p className="mt-24 max-w-2xl text-2xl font-semibold leading-10 text-neutral-500 dark:text-neutral-400">
           Once your music is successfully uploaded on YouTube and people start
           listening to it or using it in their videos, YouTube will
           automatically make a claim on your behalf.
@@ -95,11 +95,11 @@ export const YoutubeMonetizationSteps = [
   {
     title: 'Step 7',
     content: (
-      <div className="flex justify-center  flex-col items-center ">
+      <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col gap-4">
           <h1 className={title({})}>Make Money</h1>
         </div>
-        <p className="text-2xl max-w-2xl leading-10 mt-24 font-semibold dark:text-neutral-400 text-neutral-500">
+        <p className="mt-24 max-w-2xl text-2xl font-semibold leading-10 text-neutral-500 dark:text-neutral-400">
           We help you collect music royalties every time someone uses, streams,
           or downloads your music. You get paid directly into your bank account.
         </p>

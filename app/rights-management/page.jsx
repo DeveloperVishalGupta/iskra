@@ -59,7 +59,7 @@ Here at HarDan Music Group, we are committed to helping artists bag their rights
       </div>
 
       <div>
-        <div className="w-4/5 sm:w-3/5 leading-10 mx-auto">
+        <div className="mx-auto w-4/5 leading-10 sm:w-3/5">
           <h1 className={title({ size: 'lg' })}>
             Manage Your{' '}
             <span className="text-lightThemePrimaryText dark:text-darkThemePrimaryText">
@@ -73,20 +73,20 @@ Here at HarDan Music Group, we are committed to helping artists bag their rights
           </h1>
         </div>
         <div className="mt-12">
-          <div className="grid sm:grid-cols-2 gap-5 pt-5 gap-y-5 sm:gap-y-12">
+          <div className="grid gap-5 gap-y-5 pt-5 sm:grid-cols-2 sm:gap-y-12">
             {rightsProtect.map((item, index) => {
               return (
-                <div className="text-start w-4/5 shadow-lg p-4 rounded-xl dark:border-neutral-600 dark:border-2 border mx-auto">
-                  <div className="flex gap-3 items-center">
+                <div className="mx-auto w-4/5 rounded-xl border p-4 text-start shadow-lg dark:border-2 dark:border-neutral-600">
+                  <div className="flex items-center gap-3">
                     <span>{servicesImage[item.title]}</span>
                     <h1
-                      className={`${title({ size: 'sm' })} font-semibold  text-lightThemePrimaryText dark:text-darkThemePrimaryText  `}
+                      className={`${title({ size: 'sm' })} font-semibold text-lightThemePrimaryText dark:text-darkThemePrimaryText`}
                     >
                       {item.title}
                     </h1>
                   </div>
 
-                  <p className="text-lg mt-4 font-semibold dark:text-neutral-400 text-gray-500">
+                  <p className="mt-4 text-lg font-semibold text-gray-500 dark:text-neutral-400">
                     {item.details}
                   </p>
                 </div>
@@ -97,7 +97,7 @@ Here at HarDan Music Group, we are committed to helping artists bag their rights
       </div>
 
       <div>
-        <div className="w-3/5  leading-10 mx-auto">
+        <div className="mx-auto w-3/5 leading-10">
           <h1 className={title({ size: 'lg' })}>
             Your{' '}
             <span className="text-lightThemePrimaryText dark:text-darkThemePrimaryText">
@@ -106,31 +106,31 @@ Here at HarDan Music Group, we are committed to helping artists bag their rights
           </h1>
         </div>
         <div className="mt-12 px-4 sm:px-0">
-          <div className="grid grid-cols-1 gap-5 pt-5 gap-y-12">
+          <div className="grid grid-cols-1 gap-5 gap-y-12 pt-5">
             {Benefits.map((item, index) => {
               return (
                 <>
                   <Card
                     isBlurred
-                    className="border-none  sm:p-4 bg-background/60 dark:bg-default-100/50  bg-gradient-to-tr from-[#FFB457] to-[#FF705B]"
+                    className="border-none bg-background/60 bg-gradient-to-tr from-[#FFB457] to-[#FF705B] sm:p-4 dark:bg-default-100/50"
                     shadow="sm"
                   >
                     <CardBody className=" ">
-                      <div className="grid grid-cols-6 dark:bg-neutral-800/50 bg-white/15  p-6 rounded-lg md:grid-cols-12 gap-6 md:gap-4 items-center justify-center">
+                      <div className="grid grid-cols-6 items-center justify-center gap-6 rounded-lg bg-white/15 p-6 md:grid-cols-12 md:gap-4 dark:bg-neutral-800/50">
                         <div className="relative col-span-6 md:col-span-4">
                           <Image
                             alt="Album cover"
-                            className="object-cover rounded-lg overflow-hidden"
+                            className="overflow-hidden rounded-lg object-cover"
                             shadow="md"
                             src={benefits[item.title]}
                             width="100%"
                           />
                         </div>
 
-                        <div className=" flex-col col-span-6 md:col-span-8">
-                          <div className="flex flex-col gap-8  justify-between items-center">
+                        <div className="col-span-6 flex-col md:col-span-8">
+                          <div className="flex flex-col items-center justify-between gap-8">
                             <h1 className={title({})}>{item.heading}</h1>
-                            <p className="text-lg font-semibold dark:text-white text-gray-500">
+                            <p className="text-lg font-semibold text-gray-500 dark:text-white">
                               {item.detail}
                             </p>
                           </div>
@@ -145,7 +145,7 @@ Here at HarDan Music Group, we are committed to helping artists bag their rights
         </div>
       </div>
 
-      <div className="px-4 sm:px-0 mb-12 sm:mb-4">
+      <div className="mb-12 px-4 sm:mb-4 sm:px-0">
         <Discribe />
       </div>
     </div>

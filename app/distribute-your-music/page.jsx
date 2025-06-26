@@ -17,7 +17,7 @@ import { VideoPromoCard } from '../../components/VideoPromoCard';
 export default function DistributeMusic() {
   return (
     <div className="flex flex-col gap-20">
-      <div className="flex justify-center h-[calc(100vh-6.625rem)] flex-col items-center ">
+      <div className="flex h-[calc(100vh-6.625rem)] flex-col items-center justify-center">
         <div className="flex flex-col gap-4" id="distributeYourMusic">
           <h1 className={title({ size: 'xl' })}>Distribute your music </h1>
           <h1
@@ -26,13 +26,13 @@ export default function DistributeMusic() {
             Everywhere
           </h1>
         </div>
-        <p className="text-2xl max-w-2xl leading-10 mt-24 font-semibold dark:text-neutral-400 text-neutral-500">
+        <p className="mt-24 max-w-2xl text-2xl font-semibold leading-10 text-neutral-500 dark:text-neutral-400">
           You create your best music, and we will distribute it across the best
           platforms in the world.
         </p>
       </div>
       <div>
-        <div className="flex flex-col sm:flex-row gap-2 justify-center mb-8">
+        <div className="mb-8 flex flex-col justify-center gap-2 sm:flex-row">
           <h1 className={`${title()} `}>Digital plateforms for</h1>
 
           <h1
@@ -43,11 +43,11 @@ export default function DistributeMusic() {
         </div>
         <HoverEffect items={musicPlatforms} page={'distribution'} />
       </div>
-      <div className="  px-4 sm:px-0">
+      <div className="px-4 sm:px-0">
         <VideoPromoCard
           image={singer}
           heading={
-            <h1 className={`${title({ size: 'sm' })} font-semibold  `}>
+            <h1 className={`${title({ size: 'sm' })} font-semibold`}>
               Your Official Music Video{' '}
               <span className="text-lightThemePrimaryText dark:text-darkThemePrimaryText">
                 Release Partner
@@ -62,29 +62,29 @@ export default function DistributeMusic() {
         />
       </div>
 
-      <div className="h-[calc(100vh-6.625rem)] px-4 flex justify-center items-start flex-col">
-        <div className="flex flex-col gap-5 items-center mx-auto justify-center mb-8">
+      <div className="flex h-[calc(100vh-6.625rem)] flex-col items-start justify-center px-4">
+        <div className="mx-auto mb-8 flex flex-col items-center justify-center gap-5">
           <h1 className={`${title()} `}>
             Promote Your Music in All Major{' '}
             <span
-              className={`sm:hidden leading-relaxed text-lightThemePrimaryText dark:text-darkThemePrimaryText`}
+              className={`leading-relaxed text-lightThemePrimaryText sm:hidden dark:text-darkThemePrimaryText`}
             >
               Social Media Channels
             </span>
           </h1>
           <h1
-            className={`${title()} text-lightThemePrimaryText dark:text-darkThemePrimaryText hidden md:block`}
+            className={`${title()} hidden text-lightThemePrimaryText md:block dark:text-darkThemePrimaryText`}
           >
             Social Media Channels
           </h1>
         </div>
-        <p className="text-2xl leading-10 mt-18 font-medium dark:text-neutral-400 text-neutral-500">
+        <p className="mt-18 text-2xl font-medium leading-10 text-neutral-500 dark:text-neutral-400">
           Distribute your music to the world's most popular and biggest social
           media platforms effortlessly with HarDan Music Group, and manage your
           royalties and rights hassle-free. So create your free account today,
           and let's rock and roll!
         </p>
-        <div className="socialmedia flex justify-around flex-wrap items-center gap-8 px-4 sm:px-0 sm:w-1/2 mx-auto  mt-12 icons">
+        <div className="socialmedia icons mx-auto mt-12 flex flex-wrap items-center justify-around gap-8 px-4 sm:w-1/2 sm:px-0">
           <Instagram />
           <FaceBook />
           <Ticktock />

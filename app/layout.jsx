@@ -26,33 +26,32 @@ export default function RootLayout({ children }) {
       <head />
       <body
         className={clsx(
-          'min-h-screen text-foreground bg-background font-sans antialiased',
+          'min-h-screen bg-background font-sans text-foreground antialiased',
           fontSans.variable
         )}
       >
-        <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
-          <div className="relative flex flex-col h-screen">
+        <Providers
+        // themeProps={{ attribute: 'class', defaultTheme: 'white' }}
+        >
+          <div className="relative flex h-screen flex-col">
             <Navbar />
             <main className="container mx-auto flex-grow md:px-16 xl:px-28">
               {children}
             </main>
-            <footer className="w-full px-0 sm:px-36 py-3">
-              <div className="grid gap-12 sm:gap-0 sm:grid-cols-3 justify-center items-center">
+            <footer className="w-full px-0 py-3 sm:px-36">
+              <div className="grid items-center justify-center gap-12 sm:grid-cols-3 sm:gap-0">
                 <div className="text-center sm:text-start">
                   <GetInTouch />
                 </div>
                 <div className="text-center sm:text-start">
                   <h1 className={title({ size: 'sm' })}>Company</h1>
-                  <ul className="flex mt-7 flex-col gap-4 justify-start ml-2">
+                  <ul className="ml-2 mt-7 flex flex-col justify-start gap-4">
                     {companyLinks
                       .sort((a, b) => a.label.localeCompare(b.label))
                       .map((item, index) => (
                         <NextLink
                           key={index}
-                          className="
-                    linkStyles({ color: 'foreground' }),
-                    'data-[active=true]:text-primary  data-[active=true]:font-medium'
-                  "
+                          className="linkStyles({ color: 'foreground' }), 'data-[active=true]:text-primary data-[active=true]:font-medium'"
                           color="foreground"
                           href={item.href}
                         >
@@ -64,16 +63,13 @@ export default function RootLayout({ children }) {
                 <div className="text-center md:text-start">
                   {' '}
                   <h1 className={title({ size: 'sm' })}>Useful links</h1>
-                  <ul className="flex flex-col gap-4 mt-7 justify-start ml-2">
+                  <ul className="ml-2 mt-7 flex flex-col justify-start gap-4">
                     {usefulLinks
                       .sort((a, b) => a.label.localeCompare(b.label))
                       .map((item, index) => (
                         <NextLink
                           key={index}
-                          className="
-                    linkStyles({ color: 'foreground' }),
-                    'data-[active=true]:text-primary data-[active=true]:font-medium'
-                  "
+                          className="linkStyles({ color: 'foreground' }), 'data-[active=true]:text-primary data-[active=true]:font-medium'"
                           color="foreground"
                           href={item.href}
                         >
@@ -84,13 +80,13 @@ export default function RootLayout({ children }) {
                 </div>
               </div>
 
-              <div className="flex justify-center pt-12 pb-6 items-center">
+              <div className="flex items-center justify-center pb-6 pt-12">
                 <div
                   className="flex items-center gap-1 text-current"
                   title="homepage"
                 >
                   <span className="text-default-600">Powered by</span>
-                  <p className="font-semibold text-xl text-inherit text-lightThemeSecondryText dark:text-darkThemeSecondryText ">
+                  <p className="text-xl font-semibold text-inherit text-lightThemeSecondryText dark:text-darkThemeSecondryText">
                     <span className="text-lightThemePrimaryText dark:text-darkThemePrimaryText">
                       MTrax
                     </span>{' '}

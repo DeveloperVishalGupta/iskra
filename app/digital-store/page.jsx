@@ -38,7 +38,7 @@ export default function DigitalStorePage() {
       </div>
 
       <div>
-        <div className="flex gap-2 flex-col sm:flex-row justify-center mb-8">
+        <div className="mb-8 flex flex-col justify-center gap-2 sm:flex-row">
           <h1 className={`${title()} `}>Digital plateforms for</h1>
 
           <h1
@@ -50,11 +50,11 @@ export default function DigitalStorePage() {
 
         <HoverEffect items={musicPlatforms} page={'distribution'} />
       </div>
-      <div className=" px-4 sm:px-0 ">
+      <div className="px-4 sm:px-0">
         <VideoPromoCard
           image={singer}
           heading={
-            <h1 className={`${title({ size: 'sm' })} font-semibold  `}>
+            <h1 className={`${title({ size: 'sm' })} font-semibold`}>
               Your Official Music Video{' '}
               <span className="text-lightThemePrimaryText dark:text-darkThemePrimaryText">
                 Release Partner
@@ -69,8 +69,8 @@ export default function DigitalStorePage() {
         />
       </div>
 
-      <div className="h-[calc(100vh-6.625rem)] flex justify-center items-start flex-col">
-        <div className="flex flex-col gap-5 items-center mx-auto justify-center mb-8">
+      <div className="flex h-[calc(100vh-6.625rem)] flex-col items-start justify-center">
+        <div className="mx-auto mb-8 flex flex-col items-center justify-center gap-5">
           <h1 className={`${title()} `}>Promote Your Music in All Major</h1>
           <h1
             className={`${title()} text-lightThemePrimaryText dark:text-darkThemePrimaryText`}
@@ -78,13 +78,13 @@ export default function DigitalStorePage() {
             Social Media Channels
           </h1>
         </div>
-        <p className="text-2xl leading-10 mt-18 font-medium dark:text-neutral-400 text-neutral-500">
+        <p className="mt-18 text-2xl font-medium leading-10 text-neutral-500 dark:text-neutral-400">
           Distribute your music to the world's most popular and biggest social
           media platforms effortlessly with HarDan Music Group, and manage your
           royalties and rights hassle-free. So create your free account today,
           and let's rock and roll!
         </p>
-        <div className="socialmedia flex justify-around items-center gap-8 flex-wrap px-4 sm:px-0 sm:w-1/2 mx-auto  mt-12 icons">
+        <div className="socialmedia icons mx-auto mt-12 flex flex-wrap items-center justify-around gap-8 px-4 sm:w-1/2 sm:px-0">
           <Instagram />
           <FaceBook />
           <Ticktock />
@@ -93,7 +93,7 @@ export default function DigitalStorePage() {
         </div>
       </div>
 
-      <div className="px-4 sm:px-0 mb-12 sm:mb-0">
+      <div className="mb-12 px-4 sm:mb-0 sm:px-0">
         <Discribe />
       </div>
     </div>

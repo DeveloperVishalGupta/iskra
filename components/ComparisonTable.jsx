@@ -6,9 +6,9 @@ const ComparisonTable = () => {
   return (
     <div className="overflow-x-auto rounded-xl border border-gray-600">
       <table className="min-w-full table-auto text-sm text-white">
-        <thead className="bg-blue-700 text-xs text-white uppercase">
+        <thead className="bg-blue-700 text-xs uppercase text-white">
           <tr>
-            <th className="px-4 py-3 bg-[#2c2c2c] text-left"></th>
+            <th className="bg-[#2c2c2c] px-4 py-3 text-left"></th>
             {musicDistributors.map((brand) => (
               <th key={brand} className="px-4 py-3 text-center">
                 {brand}

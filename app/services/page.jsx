@@ -19,10 +19,10 @@ export default function ServicesPage() {
   };
   return (
     <div className="flex flex-col gap-20">
-      <div className="relative h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden">
+      <div className="relative flex h-[calc(100vh-4rem)] items-center justify-center overflow-hidden">
         {/* 🔸 Background Video */}
         <video
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          className="absolute left-0 top-0 z-0 h-full w-full object-cover"
           autoPlay
           loop
           muted
@@ -33,19 +33,19 @@ export default function ServicesPage() {
         </video>
 
         {/* 🔸 Overlay (optional, for contrast) */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10" />
+        <div className="absolute left-0 top-0 z-10 h-full w-full bg-black/40" />
 
         {/* 🔸 Content */}
-        <div className="relative border p-10 rounded-2xl dark:bg-neutral-800/50 bg-white/15 z-20 text-center mx-4 sm:mx-0 sm:w-3/4 flex flex-col items-center justify-center text-white px-4">
+        <div className="relative z-20 mx-4 flex flex-col items-center justify-center rounded-2xl border bg-white/15 p-10 px-4 text-center text-white sm:mx-0 sm:w-3/4 dark:bg-neutral-800/50">
           <div className="flex flex-col gap-4">
-            <h1 id="musicCareer" className={`${title({ size: 'xl' })}  `}>
+            <h1 id="musicCareer" className={`${title({ size: 'xl' })} `}>
               MTrax Digital Media, the best platform to grow your{' '}
               <span className="text-lightThemePrimaryText dark:text-darkThemePrimaryText">
                 Music Career
               </span>
             </h1>
           </div>
-          <p className="text-2xl max-w-2xl leading-10 mt-12 font-semibold dark:text-neutral-200 text-neutral-200">
+          <p className="mt-12 max-w-2xl text-2xl font-semibold leading-10 text-neutral-200 dark:text-neutral-200">
             If you are an artist/publisher/music company owner and think YouTube
             Channel management and Music Distribution are a big deal, feel
             free to contact Us.
@@ -53,30 +53,30 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      <div className="gap-20 flex flex-col">
+      <div className="flex flex-col gap-20">
         {service.map((item, index) => {
           const splitTitle = item.title.split(' ');
 
           return (
             <div key={index} className="px-4 sm:px-0">
               <h1
-                className={`${title()} flex flex-wrap justify-center w-3/4 mx-auto`}
+                className={`${title()} mx-auto flex w-3/4 flex-wrap justify-center`}
               >
                 {splitTitle.map((item, index) => {
                   const isLast = index === splitTitle.length - 1;
                   return (
                     <span
                       key={index}
-                      className={`${isLast ? 'text-lightThemePrimaryText dark:text-darkThemePrimaryText' : ''} flex  justify-center leading-normal`}
+                      className={`${isLast ? 'text-lightThemePrimaryText dark:text-darkThemePrimaryText' : ''} flex justify-center leading-normal`}
                     >
                       {item}&nbsp;
                     </span>
                   );
                 })}
               </h1>
-              <div className="my-12 grid grid-cols-7  gap-10 ">
+              <div className="my-12 grid grid-cols-7 gap-10">
                 <div
-                  className={`${item.imageOrder === 1 ? 'sm:order-1' : 'sm:order-2'} col-span-full sm:col-span-3 `}
+                  className={`${item.imageOrder === 1 ? 'sm:order-1' : 'sm:order-2'} col-span-full sm:col-span-3`}
                 >
                   <div className="rounded-2xl bg-orange-500 p-2">
                     <Image
@@ -88,11 +88,11 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 <div
-                  className={`${item.imageOrder !== 1 ? 'order-1' : 'order-2'} col-span-full sm:col-span-4 flex items-start gap-5 justify-center flex-col `}
+                  className={`${item.imageOrder !== 1 ? 'order-1' : 'order-2'} col-span-full flex flex-col items-start justify-center gap-5 sm:col-span-4`}
                 >
                   {item.details.map((detailItem) => {
                     return (
-                      <div className="flex gap-3 justify-start tracking-wide text-xl font-normal text-start  items-center">
+                      <div className="flex items-center justify-start gap-3 text-start text-xl font-normal tracking-wide">
                         <span className="">
                           <CircleCheck size={28} />
                         </span>
@@ -108,7 +108,7 @@ export default function ServicesPage() {
       </div>
 
       <div className="ms:mb-0 mb-12">
-        <div className="flex flex-col gap-2 justify-center mb-8">
+        <div className="mb-8 flex flex-col justify-center gap-2">
           <h1 className={`${title()} leading-normal`}>
             More Reasons to Choose{' '}
             <span
@@ -119,16 +119,16 @@ export default function ServicesPage() {
           </h1>
         </div>
         <div>
-          <div className="grid sm:grid-cols-2 sm:px-0 px-4 sm:gap-5 pt-5 gap-y-5 sm:gap-y-12">
+          <div className="grid gap-y-5 px-4 pt-5 sm:grid-cols-2 sm:gap-5 sm:gap-y-12 sm:px-0">
             {reasonsToChoose.map((item, index) => {
               return (
-                <div className="text-start  sm:w-4/5 shadow-lg p-4 rounded-xl dark:border-neutral-600 dark:border-2 border mx-auto">
+                <div className="mx-auto rounded-xl border p-4 text-start shadow-lg sm:w-4/5 dark:border-2 dark:border-neutral-600">
                   <h1
-                    className={`${title({ size: 'sm' })} font-semibold mb-4 text-lightThemePrimaryText dark:text-darkThemePrimaryText  `}
+                    className={`${title({ size: 'sm' })} mb-4 font-semibold text-lightThemePrimaryText dark:text-darkThemePrimaryText`}
                   >
                     {item.title}
                   </h1>
-                  <p className="text-lg mt-4 font-semibold dark:text-white text-gray-500">
+                  <p className="mt-4 text-lg font-semibold text-gray-500 dark:text-white">
                     {item.detail}
                   </p>
                 </div>

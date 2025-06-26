@@ -22,21 +22,21 @@ function Team() {
                 return (
                   <div
                     key={index}
-                    className="mt-12 flex flex-col justify-center gap-2 py-3  md:mx-auto md:max-w-[75rem]"
+                    className="mt-12 flex flex-col justify-center gap-2 py-3 md:mx-auto md:max-w-[75rem]"
                   >
-                    <p className="text-center text-[1.75rem] font-medium  md:text-start md:text-[2.15rem]">
+                    <p className="text-center text-[1.75rem] font-medium md:text-start md:text-[2.15rem]">
                       {item.teamTitle}
                     </p>
                     <p
-                      className={`mx-auto w-3/4 text-center text-lg dark:text-gray-400 text-neutral-500  md:mx-0 md:w-full md:text-start`}
+                      className={`mx-auto w-3/4 text-center text-lg text-neutral-500 md:mx-0 md:w-full md:text-start dark:text-gray-400`}
                     >
                       {item.teamDetail}
                     </p>
                     <div className="mt-12 grid gap-8 px-4 md:grid-cols-3 md:px-0 lg:grid-cols-3 xl:grid-cols-3">
                       {item.data.map((dataItem, dataIndex) => {
                         return (
-                          <div key={dataIndex} className="flex justify-center ">
-                            <div className="w-full max-w-sm overflow-hidden rounded-2xl ">
+                          <div key={dataIndex} className="flex justify-center">
+                            <div className="w-full max-w-sm overflow-hidden rounded-2xl">
                               <div className="relative h-56 w-full overflow-hidden">
                                 <Image
                                   src={
@@ -52,7 +52,7 @@ function Team() {
                                   decoding="async"
                                 />
                               </div>
-                              <div className="body bg-neutral-100 dark:bg-white  px-4 pt-6 pb-3">
+                              <div className="body bg-neutral-100 px-4 pb-3 pt-6 dark:bg-white">
                                 <p className="text-xl font-bold text-black">
                                   {dataItem.name}
                                 </p>

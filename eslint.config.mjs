@@ -3,18 +3,17 @@ import { fixupConfigRules, fixupPluginRules } from '@eslint/compat';
 import react from 'eslint-plugin-react';
 import unusedImports from 'eslint-plugin-unused-imports';
 import _import from 'eslint-plugin-import';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import jsxA11Y from 'eslint-plugin-jsx-a11y';
 import prettier from 'eslint-plugin-prettier';
 import globals from 'globals';
-import tsParser from '@typescript-eslint/parser';
+import js from '@eslint/js';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
 const compat = new FlatCompat({
   baseDirectory: __dirname,
   recommendedConfig: js.configs.recommended,
@@ -42,7 +41,6 @@ export default defineConfig([
     '!**/jest.config.js',
     '!**/plopfile.js',
     '!**/react-shim.js',
-    '!**/tsup.config.ts',
   ]),
   {
     extends: fixupConfigRules(
@@ -59,7 +57,6 @@ export default defineConfig([
       react: fixupPluginRules(react),
       'unused-imports': unusedImports,
       import: fixupPluginRules(_import),
-      '@typescript-eslint': typescriptEslint,
       'jsx-a11y': fixupPluginRules(jsxA11Y),
       prettier: fixupPluginRules(prettier),
     },
@@ -71,11 +68,8 @@ export default defineConfig([
         ),
         ...globals.node,
       },
-
-      parser: tsParser,
-      ecmaVersion: 12,
+      ecmaVersion: 2022,
       sourceType: 'module',
-
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
@@ -89,7 +83,7 @@ export default defineConfig([
       },
     },
 
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['**/*.{js,jsx}'],
 
     rules: {
       'no-console': 'warn',
@@ -100,33 +94,32 @@ export default defineConfig([
       'jsx-a11y/click-events-have-key-events': 'warn',
       'jsx-a11y/interactive-supports-focus': 'warn',
       'prettier/prettier': 'warn',
-      'no-unused-vars': 'off',
-      'unused-imports/no-unused-vars': 'off',
-      'unused-imports/no-unused-imports': 'warn',
 
-      '@typescript-eslint/no-unused-vars': [
+      'no-unused-vars': [
         'warn',
         {
+          vars: 'all',
           args: 'after-used',
           ignoreRestSiblings: false,
           argsIgnorePattern: '^_.*?$',
+          varsIgnorePattern: '^_.*?$',
         },
       ],
+
+      'unused-imports/no-unused-vars': 'warn',
+      'unused-imports/no-unused-imports': 'warn',
 
       'import/order': [
         'warn',
         {
           groups: [
-            'type',
             'builtin',
-            'object',
             'external',
             'internal',
             'parent',
             'sibling',
             'index',
           ],
-
           pathGroups: [
             {
               pattern: '~/**',
@@ -134,7 +127,6 @@ export default defineConfig([
               position: 'after',
             },
           ],
-
           'newlines-between': 'always',
         },
       ],

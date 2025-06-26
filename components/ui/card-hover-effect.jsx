@@ -28,7 +28,7 @@ export const HoverEffect = ({ items, className, page }) => {
   return (
     <div
       className={cn(
-        'grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10',
+        'grid grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-3',
         className
       )}
     >
@@ -36,14 +36,14 @@ export const HoverEffect = ({ items, className, page }) => {
         <Link
           href={item?.link || '#'}
           key={idx}
-          className="relative group  block p-2 h-full w-full"
+          className="group relative block h-full w-full p-2"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full hover:border-0 bg-neutral-300/[0.3] dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute inset-0 block h-full w-full rounded-3xl bg-neutral-300/[0.3] hover:border-0 dark:bg-slate-800/[0.8]"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -58,7 +58,7 @@ export const HoverEffect = ({ items, className, page }) => {
             )}
           </AnimatePresence>
           <Card
-            className={`dark:bg-neutral-900 bg-neutral-200 hover:border-0  border-2`}
+            className={`border-2 bg-neutral-200 hover:border-0 dark:bg-neutral-900`}
           >
             <CardTitle className={`text-black dark:text-white`}>
               {page === 'distribution' ? (
@@ -74,12 +74,12 @@ export const HoverEffect = ({ items, className, page }) => {
               )}
             </CardTitle>
             {page !== 'distribution' && (
-              <div className="flex  justify-center my-10 items-center">
+              <div className="my-10 flex items-center justify-center">
                 <CardTitle className={`m-0 text-black dark:text-white`}>
                   {item.price}
                 </CardTitle>
                 <CardDescription
-                  className={`m-0 text-neutral-500  dark:text-neutral-200 `}
+                  className={`m-0 text-neutral-500 dark:text-neutral-200`}
                 >
                   {'/'}
                 </CardDescription>
@@ -114,7 +114,7 @@ export const Card = ({ className, children }) => {
     <div
       // key={}
       className={cn(
-        'rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20',
+        'relative z-20 h-full w-full overflow-hidden rounded-2xl border border-transparent bg-black p-4 group-hover:border-slate-700 dark:border-white/[0.2]',
         className
       )}
     >
@@ -126,7 +126,7 @@ export const Card = ({ className, children }) => {
 };
 export const CardTitle = ({ className, children }) => {
   return (
-    <h4 className={cn('text-zinc-100 font-bold tracking-wide mt-4', className)}>
+    <h4 className={cn('mt-4 font-bold tracking-wide text-zinc-100', className)}>
       {children}
     </h4>
   );
@@ -135,7 +135,7 @@ export const CardDescription = ({ className, children }) => {
   return (
     <p
       className={cn(
-        'mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm',
+        'mt-8 text-sm leading-relaxed tracking-wide text-zinc-400',
         className
       )}
     >

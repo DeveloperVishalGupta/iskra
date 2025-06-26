@@ -11,10 +11,10 @@ export function VideoPromoCard({
   showPlateforms = false,
 }) {
   return (
-    <div className="dark:border-neutral-400 border-gray-400 border-2 grid grid-cols-7 rounded-2xl overflow-hidden ">
+    <div className="grid grid-cols-7 overflow-hidden rounded-2xl border-2 border-gray-400 dark:border-neutral-400">
       <div className="col-span-full sm:col-span-3">
         {video && (
-          <video className="w-full h-full " autoPlay loop muted playsInline>
+          <video className="h-full w-full" autoPlay loop muted playsInline>
             <source src={video} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -23,23 +23,23 @@ export function VideoPromoCard({
           <Image
             alt="HeroUI hero Image"
             src={image}
-            className="!rounded-none "
+            className="!rounded-none"
           />
         )}
       </div>
-      <div className="flex  justify-center items-center col-span-full sm:col-span-4">
-        <div className="px-4 sm:px-12 py-8 flex flex-col gap-5">
+      <div className="col-span-full flex items-center justify-center sm:col-span-4">
+        <div className="flex flex-col gap-5 px-4 py-8 sm:px-12">
           {heading}
-          <p className="text-lg font-semibold dark:text-white text-gray-500">
+          <p className="text-lg font-semibold text-gray-500 dark:text-white">
             {details}
           </p>
           {showPlateforms && (
-            <div className="sm:flex flex-wrap  mt-5 justify-around items-center">
+            <div className="mt-5 flex-wrap items-center justify-around sm:flex">
               {['YouTube', 'Amazon', 'Spotify'].map((item, index) => {
                 return (
                   <div
                     key={index}
-                    className="flex mb-4 sm:mb-0 justify-center sm:justify-start gap-3 sm:gap-1 items-center"
+                    className="mb-4 flex items-center justify-center gap-3 sm:mb-0 sm:justify-start sm:gap-1"
                   >
                     {item === 'YouTube' ? (
                       <YouTube />
@@ -48,7 +48,7 @@ export function VideoPromoCard({
                     ) : (
                       <Spotify />
                     )}
-                    <h1 className={`${title({ size: 'sm' })} font-semibold  `}>
+                    <h1 className={`${title({ size: 'sm' })} font-semibold`}>
                       {item}
                     </h1>
                   </div>

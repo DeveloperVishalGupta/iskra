@@ -2,7 +2,6 @@ import {
   Navbar as HeroUINavbar,
   NavbarContent,
   NavbarMenu,
-  NavbarMenuToggle,
   NavbarBrand,
   NavbarItem,
   NavbarMenuItem,
@@ -13,12 +12,10 @@ import { Input } from '@heroui/input';
 import { link as linkStyles } from '@heroui/theme';
 import NextLink from 'next/link';
 import clsx from 'clsx';
-
-import { GithubIcon, SearchIcon } from '../assets/icons/icons';
-import { ThemeSwitch } from './theme-switch';
-import { siteConfig } from '../config/site';
-import { YouTube } from '../assets/brand-Icons';
 import { useEffect, useState } from 'react';
+
+import { SearchIcon } from '../assets/icons/icons';
+import { siteConfig } from '../config/site';
 import { headings } from '../constant';
 
 export const Navbar = () => {
@@ -29,6 +26,7 @@ export const Navbar = () => {
 
   const handleChange = (e) => {
     const value = e.target.value;
+
     if (value) {
       setQuery(value);
       const suggestions = headings.filter((item) =>
@@ -67,7 +65,7 @@ export const Navbar = () => {
         labelPlacement="outside"
         placeholder="Search..."
         startContent={
-          <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
+          <SearchIcon className="pointer-events-none flex-shrink-0 text-base text-default-400" />
         }
         type="search"
         value={query}
@@ -75,11 +73,12 @@ export const Navbar = () => {
       />
 
       {filtered.length > 0 && (
-        <ul className="border dark:bg-black bg-white rounded mt-2 shadow absolute right-6 max-w-96">
+        <ul className="absolute right-6 mt-2 max-w-96 rounded border bg-white shadow dark:bg-black">
           {filtered.map((item, index) => (
             <li
               key={index}
-              className="p-2 dark:hover:bg-neutral-700 hover:bg-neutral-200 cursor-pointer  whitespace-normal"
+              aria-hidden="true"
+              className="cursor-pointer whitespace-normal p-2 hover:bg-neutral-200 dark:hover:bg-neutral-700"
               onClick={() => handleSelect(item)}
             >
               {item.title}
@@ -93,9 +92,9 @@ export const Navbar = () => {
   return (
     <HeroUINavbar maxWidth="full" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
-            <p className="font-bold text-xl text-inherit text-lightThemeSecondryText dark:text-darkThemeSecondryText ">
+        <NavbarBrand as="li" className="max-w-fit gap-3">
+          <NextLink className="flex items-center justify-start gap-1" href="/">
+            <p className="text-xl font-bold text-inherit text-lightThemeSecondryText dark:text-darkThemeSecondryText">
               <span className="text-lightThemePrimaryText dark:text-darkThemePrimaryText">
                 MTrax
               </span>{' '}
@@ -106,16 +105,16 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
+        className="hidden basis-1/5 sm:flex sm:basis-full"
         justify="end"
       >
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
+        <ul className="ml-2 hidden justify-start gap-4 lg:flex">
           {companyLinks?.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
                 className={clsx(
                   linkStyles({ color: 'foreground' }),
-                  'data-[active=true]:text-primary data-[active=true]:font-medium'
+                  'data-[active=true]:font-medium data-[active=true]:text-primary'
                 )}
                 color="foreground"
                 href={item.href}
@@ -125,15 +124,15 @@ export const Navbar = () => {
             </NavbarItem>
           ))}
         </ul>
-        <NavbarItem className="hidden sm:flex gap-2">
-          <ThemeSwitch />
+        <NavbarItem className="hidden gap-2 sm:flex">
+          {/* <ThemeSwitch /> */}
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <ThemeSwitch />
-        <NavbarMenuToggle>hello</NavbarMenuToggle>
+      <NavbarContent className="basis-1 pl-4 sm:hidden" justify="end">
+        {/* <ThemeSwitch /> */}
+        {/* <NavbarMenuToggle>hello</NavbarMenuToggle> */}
       </NavbarContent>
 
       <NavbarMenu>

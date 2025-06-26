@@ -10,11 +10,11 @@ export default function PublishingPage() {
     {
       title: 'Step 1',
       content: (
-        <div className="flex justify-center  flex-col items-center ">
+        <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col gap-4">
             <h1 className={title()}>signup & Register</h1>
           </div>
-          <p className="text-2xl max-w-2xl leading-10 mt-24 font-semibold dark:text-neutral-400 text-neutral-500">
+          <p className="mt-24 max-w-2xl text-2xl font-semibold leading-10 text-neutral-500 dark:text-neutral-400">
             Just sign up and register your account with HarDan music Group. Now,
             you can access our easy-to-use dashboard and 100+ stores to
             distribute your music worldwide.
@@ -25,11 +25,11 @@ export default function PublishingPage() {
     {
       title: 'Step 2',
       content: (
-        <div className="flex justify-center  flex-col items-center ">
+        <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col gap-4">
             <h1 className={title()}>Collect your Royalties</h1>
           </div>
-          <p className="text-2xl max-w-2xl leading-10 mt-24 font-semibold dark:text-neutral-400 text-neutral-500">
+          <p className="mt-24 max-w-2xl text-2xl font-semibold leading-10 text-neutral-500 dark:text-neutral-400">
             Once you register your songs, leave the rest to us. We will help you
             collect all your publishing royalties from multiple stores on your
             behalf so that you don’t miss any.
@@ -40,13 +40,13 @@ export default function PublishingPage() {
     {
       title: 'Step 3',
       content: (
-        <div className="flex justify-center  flex-col items-center ">
+        <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col gap-4">
             <h1 className={title()}>
               Pitch your Music for Radio, TV, Films, Ads, etc.
             </h1>
           </div>
-          <p className="text-2xl max-w-2xl leading-10 mt-24 font-semibold dark:text-neutral-400 text-neutral-500">
+          <p className="mt-24 max-w-2xl text-2xl font-semibold leading-10 text-neutral-500 dark:text-neutral-400">
             Thanks to our sync licensing team! Now you can relax as our music
             pitching experts will help you pitch your music on the right
             platforms. Now, all you need to do is to embrace a global fanbase.
@@ -57,11 +57,11 @@ export default function PublishingPage() {
     {
       title: 'Step 4',
       content: (
-        <div className="flex justify-center  flex-col items-center ">
+        <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col gap-4">
             <h1 className={title({})}>Get Paid</h1>
           </div>
-          <p className="text-2xl max-w-2xl leading-10 mt-24 font-semibold dark:text-neutral-400 text-neutral-500">
+          <p className="mt-24 max-w-2xl text-2xl font-semibold leading-10 text-neutral-500 dark:text-neutral-400">
             Finally! Here is the fun part. You start earning publishing
             royalties automatically into your account whenever someone streams,
             downloads, or plays your music.
@@ -93,7 +93,7 @@ export default function PublishingPage() {
           worldwide with us and collect all the songwriting royalties you
           deserve.`}
       />
-      <div className="flex flex-col items-center ">
+      <div className="flex flex-col items-center">
         <div className="flex flex-col gap-4">
           <h1 className={title({})}>
             How can I{' '}
@@ -109,7 +109,7 @@ export default function PublishingPage() {
       </div>
 
       <div>
-        <div className="flex flex-col gap-2 justify-center mb-8">
+        <div className="mb-8 flex flex-col justify-center gap-2">
           <h1 className={`${title()} `}>
             Music{' '}
             <span className="text-lightThemePrimaryText dark:text-darkThemePrimaryText">
@@ -119,16 +119,16 @@ export default function PublishingPage() {
           </h1>
         </div>
         <div>
-          <div className="grid sm:grid-cols-2 gap-5 pt-5 gap-y-5 sm:gap-y-12">
+          <div className="grid gap-5 gap-y-5 pt-5 sm:grid-cols-2 sm:gap-y-12">
             {publishingRoyalties.map((item, index) => {
               return (
-                <div className="text-start w-4/5 shadow-lg p-4 rounded-xl dark:border-neutral-600 dark:border-2 border mx-auto">
+                <div className="mx-auto w-4/5 rounded-xl border p-4 text-start shadow-lg dark:border-2 dark:border-neutral-600">
                   <h1
-                    className={`${title({ size: 'sm' })} font-semibold mb-4  text-lightThemePrimaryText dark:text-darkThemePrimaryText  `}
+                    className={`${title({ size: 'sm' })} mb-4 font-semibold text-lightThemePrimaryText dark:text-darkThemePrimaryText`}
                   >
                     {item.title}
                   </h1>
-                  <p className="text-lg mt-4 font-semibold dark:text-neutral-400 text-gray-500">
+                  <p className="mt-4 text-lg font-semibold text-gray-500 dark:text-neutral-400">
                     {item.detail}
                   </p>
                 </div>
@@ -142,7 +142,7 @@ export default function PublishingPage() {
         <VideoPromoCard
           image={musicPublished}
           heading={
-            <h1 className={`${title({ size: 'sm' })} font-semibold  `}>
+            <h1 className={`${title({ size: 'sm' })} font-semibold`}>
               Your Best Music
               <span className="text-lightThemePrimaryText dark:text-darkThemePrimaryText">
                 {' '}
