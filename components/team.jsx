@@ -1,8 +1,9 @@
 'use client';
+import Image from 'next/image';
+
 import teamMembers from '../constant/team.json';
 import maleUser from '../assets/images/maleUser.jpg';
 import femaleUser from '../assets/images/femaleUser.jpg';
-import Image from 'next/image';
 function Team() {
   const team = teamMembers;
   const membersPhoto = {
@@ -39,6 +40,10 @@ function Team() {
                             <div className="w-full max-w-sm overflow-hidden rounded-2xl">
                               <div className="relative h-56 w-full overflow-hidden">
                                 <Image
+                                  alt={dataItem.name}
+                                  className="h-full w-full object-cover object-top"
+                                  decoding="async"
+                                  loading="lazy"
                                   src={
                                     membersPhoto[dataItem.image]
                                       ? membersPhoto[dataItem.image]
@@ -46,10 +51,6 @@ function Team() {
                                         ? maleUser
                                         : femaleUser
                                   }
-                                  alt={dataItem.name}
-                                  className="h-full w-full object-cover object-top"
-                                  loading="lazy"
-                                  decoding="async"
                                 />
                               </div>
                               <div className="body bg-neutral-100 px-4 pb-3 pt-6 dark:bg-white">

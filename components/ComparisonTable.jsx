@@ -8,7 +8,7 @@ const ComparisonTable = () => {
       <table className="min-w-full table-auto text-sm text-white">
         <thead className="bg-blue-700 text-xs uppercase text-white">
           <tr>
-            <th className="bg-[#2c2c2c] px-4 py-3 text-left"></th>
+            <th className="bg-[#2c2c2c] px-4 py-3 text-left" />
             {musicDistributors.map((brand) => (
               <th key={brand} className="px-4 py-3 text-center">
                 {brand}

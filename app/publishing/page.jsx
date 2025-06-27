@@ -70,9 +70,13 @@ export default function PublishingPage() {
       ),
     },
   ];
+
   return (
     <div className="flex flex-col gap-y-20">
       <HeroSectionTemp
+        details={`Earn money for the songs you write or compose. Publish your songs
+          worldwide with us and collect all the songwriting royalties you
+          deserve.`}
         heading={
           <div className="flex flex-col gap-4">
             <h1 className={title({ size: 'xl' })}>
@@ -89,9 +93,6 @@ export default function PublishingPage() {
             </h1>
           </div>
         }
-        details={`Earn money for the songs you write or compose. Publish your songs
-          worldwide with us and collect all the songwriting royalties you
-          deserve.`}
       />
       <div className="flex flex-col items-center">
         <div className="flex flex-col gap-4">
@@ -122,7 +123,10 @@ export default function PublishingPage() {
           <div className="grid gap-5 gap-y-5 pt-5 sm:grid-cols-2 sm:gap-y-12">
             {publishingRoyalties.map((item, index) => {
               return (
-                <div className="mx-auto w-4/5 rounded-xl border p-4 text-start shadow-lg dark:border-2 dark:border-neutral-600">
+                <div
+                  key={index}
+                  className="mx-auto w-4/5 rounded-xl border p-4 text-start shadow-lg dark:border-2 dark:border-neutral-600"
+                >
                   <h1
                     className={`${title({ size: 'sm' })} mb-4 font-semibold text-lightThemePrimaryText dark:text-darkThemePrimaryText`}
                   >
@@ -140,7 +144,7 @@ export default function PublishingPage() {
 
       <div className="px-4 sm:px-0">
         <VideoPromoCard
-          image={musicPublished}
+          details={`Are you an artist? No more worries about publishing music or collecting royalties. We help you publish music on the right platform and get you the royalties you deserve.`}
           heading={
             <h1 className={`${title({ size: 'sm' })} font-semibold`}>
               Your Best Music
@@ -150,11 +154,14 @@ export default function PublishingPage() {
               </span>
             </h1>
           }
-          details={`Are you an artist? No more worries about publishing music or collecting royalties. We help you publish music on the right platform and get you the royalties you deserve.`}
+          image={musicPublished}
         />
       </div>
       <div className="">
         <HeroSectionTemp
+          componentWidth={'90%'}
+          details={`Once you appoint HarDan Music Group as your publishing partner, you focus more on creating some amazing music and we focus on publishing them on the right platform and managing your music rights effectively.`}
+          detailsFont={20}
           heading={
             <div className="flex flex-col gap-4">
               <h1 className={title({ size: 'lg' })}>Collect your publishing</h1>
@@ -167,9 +174,6 @@ export default function PublishingPage() {
               </h1>
             </div>
           }
-          componentWidth={'90%'}
-          detailsFont={20}
-          details={`Once you appoint HarDan Music Group as your publishing partner, you focus more on creating some amazing music and we focus on publishing them on the right platform and managing your music rights effectively.`}
         />
       </div>
     </div>

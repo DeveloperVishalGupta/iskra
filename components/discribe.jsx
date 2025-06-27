@@ -1,7 +1,9 @@
 'use client';
 
 import Image from 'next/image';
+
 import streamingServices from '../assets/images/streaming-services.png';
+
 import { title } from './primitives';
 
 function Discribe() {

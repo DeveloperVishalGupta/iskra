@@ -14,9 +14,9 @@ export const YoutubeMonetizationSteps = [
           <h1 className={title()}>Sign up</h1>
         </div>
         <p className="mt-24 max-w-2xl text-2xl font-semibold leading-10 text-neutral-500 dark:text-neutral-400">
-          Create your HarDan Music account today and distribute music to
+          {`Create your HarDan Music account today and distribute music to
           multiple stores right from our dashboard. It's as easy as one, two, or
-          three
+          three`}
         </p>
       </div>
     ),
@@ -113,6 +113,10 @@ export default function MonetizationPage() {
     <div className="flex flex-col gap-20">
       <div>
         <HeroSectionTemp
+          showButton
+          btnTitle="Get stared for free"
+          componentWidth={'100%'}
+          details={`Make money every single time someone plays your music anywhere on YouTube, and manage your channels effectively.`}
           heading={
             <h1 className={title({ size: 'xl' })}>
               <span className="text-lightThemePrimaryText dark:text-darkThemePrimaryText">
@@ -121,15 +125,12 @@ export default function MonetizationPage() {
               & Channel Management
             </h1>
           }
-          details={`Make money every single time someone plays your music anywhere on YouTube, and manage your channels effectively.`}
-          componentWidth={'100%'}
-          btnTitle="Get stared for free"
-          showButton
         />
       </div>
       <div className="px-4 sm:px-0">
         <VideoPromoCard
-          image={youtube}
+          showPlateforms
+          details={`We support thousands of creators like you to get the revenue you deserve. With an expert team to distribute your music into YouTube Content ID, we help you optimize, manage, and monetize your YouTube channels and protect your copyrights and royalties.`}
           heading={
             <h1 className={title({ size: 'lg' })}>
               YouTube
@@ -144,8 +145,7 @@ export default function MonetizationPage() {
               </span>
             </h1>
           }
-          details={`We support thousands of creators like you to get the revenue you deserve. With an expert team to distribute your music into YouTube Content ID, we help you optimize, manage, and monetize your YouTube channels and protect your copyrights and royalties.`}
-          showPlateforms
+          image={youtube}
         />
       </div>
       <div className="relative w-full overflow-clip">
@@ -153,6 +153,11 @@ export default function MonetizationPage() {
       </div>
       <div className="pt-10">
         <HeroSectionTemp
+          showButton
+          btnTitle="sign up now"
+          componentWidth={'90%'}
+          details={`Start monetizing your YouTube channels and earn unlimited income whenever someone  streams or uses your music. Get expert assistance to optimize and manage your YouTube   channels efficiently. Skyrocket your music career with HarDan Music Group.
+`}
           heading={
             <h1 className={title({ size: 'lg' })}>
               Create Unlimited
@@ -170,11 +175,6 @@ export default function MonetizationPage() {
               </span>
             </h1>
           }
-          details={`Start monetizing your YouTube channels and earn unlimited income whenever someone  streams or uses your music. Get expert assistance to optimize and manage your YouTube   channels efficiently. Skyrocket your music career with HarDan Music Group.
-`}
-          componentWidth={'90%'}
-          btnTitle="sign up now"
-          showButton
         />
       </div>
 

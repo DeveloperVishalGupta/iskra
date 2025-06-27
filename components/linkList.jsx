@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 function LinkListComponent({ data, vertical = false }) {
   return (
     <div>

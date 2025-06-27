@@ -2,8 +2,10 @@
 // import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
-import { cn } from '../../lib/utils';
 import { Button } from '@heroui/button';
+import Link from 'next/link';
+
+import { cn } from '../../lib/utils';
 import {
   Amazon,
   Apple,
@@ -12,7 +14,6 @@ import {
   Spotify,
   YouTube,
 } from '../../assets/brand-Icons';
-import Link from 'next/link';
 
 export const HoverEffect = ({ items, className, page }) => {
   let [hoveredIndex, setHoveredIndex] = useState(null);
@@ -34,26 +35,26 @@ export const HoverEffect = ({ items, className, page }) => {
     >
       {items.map((item, idx) => (
         <Link
-          href={item?.link || '#'}
           key={idx}
           className="group relative block h-full w-full p-2"
+          href={item?.link || '#'}
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 block h-full w-full rounded-3xl bg-neutral-300/[0.3] hover:border-0 dark:bg-slate-800/[0.8]"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
                   transition: { duration: 0.15 },
                 }}
+                className="absolute inset-0 block h-full w-full rounded-3xl bg-neutral-300/[0.3] hover:border-0 dark:bg-slate-800/[0.8]"
                 exit={{
                   opacity: 0,
                   transition: { duration: 0.15, delay: 0.2 },
                 }}
+                initial={{ opacity: 0 }}
+                layoutId="hoverBackground"
               />
             )}
           </AnimatePresence>
@@ -98,7 +99,7 @@ export const HoverEffect = ({ items, className, page }) => {
             </CardDescription>
 
             {page !== 'distribution' && (
-              <Button variant="ghost" className="mt-10">
+              <Button className="mt-10" variant="ghost">
                 Send message
               </Button>
             )}

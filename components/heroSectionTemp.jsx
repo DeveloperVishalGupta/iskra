@@ -11,13 +11,13 @@ export function HeroSectionTemp({
 }) {
   return (
     <div
-      style={{ width: componentWidth }}
       className={`${componentWidth && 'mx-auto'} flex h-[calc(100vh-6.625rem)] flex-col items-center justify-center`}
+      style={{ width: componentWidth }}
     >
       {heading}
       <p
-        style={{ fontSize: detailsFont }}
         className={`${!detailsFont && 'text-2xl'} ${!componentWidth && 'max-w-2xl'} mt-16 font-semibold leading-10 text-neutral-500 dark:text-neutral-400`}
+        style={{ fontSize: detailsFont }}
       >
         {details}
       </p>
@@ -25,8 +25,8 @@ export function HeroSectionTemp({
         <div>
           <Button
             className="my-16 bg-orange-500 px-20 text-lg"
-            size="lg"
             radius="sm"
+            size="lg"
           >
             {btnTitle}
           </Button>

@@ -1,5 +1,6 @@
 import { Snippet } from '@heroui/snippet';
 import { Code } from '@heroui/code';
+
 import { title } from '../components/primitives';
 
 export default function Home() {

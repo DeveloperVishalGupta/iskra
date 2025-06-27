@@ -3,7 +3,6 @@ import { title } from '../../components/primitives';
 import { musicPlatforms } from '../../constant';
 import singer from '../../assets/images/singer.jpg';
 import { HoverEffect } from '../../components/ui/card-hover-effect';
-
 import {
   FaceBook,
   Instagram,
@@ -45,7 +44,11 @@ export default function DistributeMusic() {
       </div>
       <div className="px-4 sm:px-0">
         <VideoPromoCard
-          image={singer}
+          showPlateforms
+          details={`Launch your official music videos in style. We help you quickly
+                get your music videos live on the most popular social platforms
+                and earn royalties. We have you covered from setup and launch to
+                video uploads and rights management.`}
           heading={
             <h1 className={`${title({ size: 'sm' })} font-semibold`}>
               Your Official Music Video{' '}
@@ -54,11 +57,7 @@ export default function DistributeMusic() {
               </span>
             </h1>
           }
-          details={`Launch your official music videos in style. We help you quickly
-                get your music videos live on the most popular social platforms
-                and earn royalties. We have you covered from setup and launch to
-                video uploads and rights management.`}
-          showPlateforms
+          image={singer}
         />
       </div>
 
@@ -79,10 +78,10 @@ export default function DistributeMusic() {
           </h1>
         </div>
         <p className="mt-18 text-2xl font-medium leading-10 text-neutral-500 dark:text-neutral-400">
-          Distribute your music to the world's most popular and biggest social
+          {` Distribute your music to the world's most popular and biggest social
           media platforms effortlessly with HarDan Music Group, and manage your
           royalties and rights hassle-free. So create your free account today,
-          and let's rock and roll!
+          and let's rock and roll!`}
         </p>
         <div className="socialmedia icons mx-auto mt-12 flex flex-wrap items-center justify-around gap-8 px-4 sm:w-1/2 sm:px-0">
           <Instagram />

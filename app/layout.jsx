@@ -1,14 +1,16 @@
 'use client';
 import '../styles/globals.css';
 import clsx from 'clsx';
-import { Providers } from './providers';
+import NextLink from 'next/link';
+import { useEffect, useState } from 'react';
+
 import { fontSans } from '../config/fonts';
 import { Navbar } from '../components/navbar';
 import GetInTouch from '../components/GetInTouch';
 import { title } from '../components/primitives';
 import { siteConfig } from '../config/site';
-import NextLink from 'next/link';
-import { useEffect, useState } from 'react';
+
+import { Providers } from './providers';
 
 export default function RootLayout({ children }) {
   const pageRoutes = siteConfig.pageRoutes;
@@ -21,6 +23,7 @@ export default function RootLayout({ children }) {
       setUsefulLinks(pageRoutes.filter((item) => item.type === 2));
     }
   }, [pageRoutes]);
+
   return (
     <html suppressHydrationWarning lang="en">
       <head />
@@ -30,9 +33,7 @@ export default function RootLayout({ children }) {
           fontSans.variable
         )}
       >
-        <Providers
-        // themeProps={{ attribute: 'class', defaultTheme: 'white' }}
-        >
+        <Providers>
           <div className="relative flex h-screen flex-col">
             <Navbar />
             <main className="container mx-auto flex-grow md:px-16 xl:px-28">

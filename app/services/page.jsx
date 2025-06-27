@@ -1,4 +1,6 @@
 'use client';
+import { Image } from '@heroui/image';
+
 import { title } from '../../components/primitives';
 import { reasonsToChoose, service } from '../../constant';
 import worldwideDistributionServiceImage from '../../assets/images/services-1.jpg';
@@ -6,7 +8,6 @@ import musicPublishingServiceImage from '../../assets/images/services-2.jpg';
 import youTubeMonetizationServiceImage from '../../assets/images/services-3.jpg';
 import ManagemenmServiceImage from '../../assets/images/services-4.jpg';
 import { CircleCheck } from '../../assets/icons/icons';
-import { Image } from '@heroui/image';
 
 export default function ServicesPage() {
   const servicesImage = {
@@ -17,16 +18,17 @@ export default function ServicesPage() {
       youTubeMonetizationServiceImage,
     'Copyright Management': ManagemenmServiceImage,
   };
+
   return (
     <div className="flex flex-col gap-20">
       <div className="relative flex h-[calc(100vh-4rem)] items-center justify-center overflow-hidden">
         {/* 🔸 Background Video */}
         <video
-          className="absolute left-0 top-0 z-0 h-full w-full object-cover"
           autoPlay
           loop
           muted
           playsInline
+          className="absolute left-0 top-0 z-0 h-full w-full object-cover"
         >
           <source src="/videos/DJ.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -38,7 +40,7 @@ export default function ServicesPage() {
         {/* 🔸 Content */}
         <div className="relative z-20 mx-4 flex flex-col items-center justify-center rounded-2xl border bg-white/15 p-10 px-4 text-center text-white sm:mx-0 sm:w-3/4 dark:bg-neutral-800/50">
           <div className="flex flex-col gap-4">
-            <h1 id="musicCareer" className={`${title({ size: 'xl' })} `}>
+            <h1 className={`${title({ size: 'xl' })} `} id="musicCareer">
               MTrax Digital Media, the best platform to grow your{' '}
               <span className="text-lightThemePrimaryText dark:text-darkThemePrimaryText">
                 Music Career
@@ -64,6 +66,7 @@ export default function ServicesPage() {
               >
                 {splitTitle.map((item, index) => {
                   const isLast = index === splitTitle.length - 1;
+
                   return (
                     <span
                       key={index}
@@ -80,9 +83,9 @@ export default function ServicesPage() {
                 >
                   <div className="rounded-2xl bg-orange-500 p-2">
                     <Image
-                      className="rounded-xl shadow-sm"
                       isZoomed
                       alt={item.title}
+                      className="rounded-xl shadow-sm"
                       src={servicesImage[item.title].src}
                     />
                   </div>
@@ -90,9 +93,12 @@ export default function ServicesPage() {
                 <div
                   className={`${item.imageOrder !== 1 ? 'order-1' : 'order-2'} col-span-full flex flex-col items-start justify-center gap-5 sm:col-span-4`}
                 >
-                  {item.details.map((detailItem) => {
+                  {item.details.map((detailItem, detailIndex) => {
                     return (
-                      <div className="flex items-center justify-start gap-3 text-start text-xl font-normal tracking-wide">
+                      <div
+                        key={detailIndex}
+                        className="flex items-center justify-start gap-3 text-start text-xl font-normal tracking-wide"
+                      >
                         <span className="">
                           <CircleCheck size={28} />
                         </span>
@@ -122,7 +128,10 @@ export default function ServicesPage() {
           <div className="grid gap-y-5 px-4 pt-5 sm:grid-cols-2 sm:gap-5 sm:gap-y-12 sm:px-0">
             {reasonsToChoose.map((item, index) => {
               return (
-                <div className="mx-auto rounded-xl border p-4 text-start shadow-lg sm:w-4/5 dark:border-2 dark:border-neutral-600">
+                <div
+                  key={index}
+                  className="mx-auto rounded-xl border p-4 text-start shadow-lg sm:w-4/5 dark:border-2 dark:border-neutral-600"
+                >
                   <h1
                     className={`${title({ size: 'sm' })} mb-4 font-semibold text-lightThemePrimaryText dark:text-darkThemePrimaryText`}
                   >

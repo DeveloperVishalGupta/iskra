@@ -34,6 +34,7 @@ export default function ContactPage() {
           alert(
             'Error fetching location. Please allow location access in your browser.'
           );
+          // eslint-disable-next-line no-console
           console.error(error);
         }
       );

@@ -1,10 +1,11 @@
 import { Card, CardBody } from '@heroui/card';
+import Image from 'next/image';
+
 import { FaceBook, YouTube } from '../../assets/brand-Icons';
 import { HeroSectionTemp } from '../../components/heroSectionTemp';
 import { title } from '../../components/primitives';
 import { VideoPromoCard } from '../../components/VideoPromoCard';
 import { Benefits, rightsProtect } from '../../constant';
-import Image from 'next/image';
 import ownership from '../../assets/images/musicPublished.jpg';
 import concert from '../../assets/images/concert.jpg';
 import relatable from '../../assets/images/relatable.jpg';
@@ -26,6 +27,11 @@ export default function RightsManagementPage() {
     <div className="flex flex-col gap-20">
       <div>
         <HeroSectionTemp
+          showButton
+          btnTitle="Protect your music now"
+          componentWidth={'90%'}
+          details={`Managing your music rights and collecting your royalties are no more stressful. We hold a hundred percent responsibility and commitment to managing and protecting your music and royalty rights worldwide across multiple platforms.`}
+          detailsFont={20}
           heading={
             <h1 className={title({ size: 'lg' })}>
               We take 100%{' '}
@@ -35,16 +41,12 @@ export default function RightsManagementPage() {
               for your music
             </h1>
           }
-          componentWidth={'90%'}
-          detailsFont={20}
-          btnTitle="Protect your music now"
-          showButton
-          details={`Managing your music rights and collecting your royalties are no more stressful. We hold a hundred percent responsibility and commitment to managing and protecting your music and royalty rights worldwide across multiple platforms.`}
         />
       </div>
       <div className="px-4 sm:px-0">
         <VideoPromoCard
-          video={'/videos/musicArtist.mp4'}
+          details={`We know how hard it is for musicians and artists to create masterpieces. Is that all? No, protecting your digital music rights and royalties across various platforms globally is a hectic job. And, if you do not manage it properly, others start copying your music and distributing it for free - putting all your efforts in vain. 
+Here at HarDan Music Group, we are committed to helping artists bag their rights properly and earn their revenue effortlessly. We ensure that your music is distributed with proper agreements and rights so that you earn royalties every time without fail and get compensated. That's why we've made Digital Rights Manager (DRM). DRM will allow every artist to protect their music free of charge.`}
           heading={
             <h1 className={title({ size: 'lg' })}>
               Your Digital Rights Manager and{' '}
@@ -53,8 +55,7 @@ export default function RightsManagementPage() {
               </span>
             </h1>
           }
-          details={`We know how hard it is for musicians and artists to create masterpieces. Is that all? No, protecting your digital music rights and royalties across various platforms globally is a hectic job. And, if you do not manage it properly, others start copying your music and distributing it for free - putting all your efforts in vain. 
-Here at HarDan Music Group, we are committed to helping artists bag their rights properly and earn their revenue effortlessly. We ensure that your music is distributed with proper agreements and rights so that you earn royalties every time without fail and get compensated. That's why we've made Digital Rights Manager (DRM). DRM will allow every artist to protect their music free of charge.`}
+          video={'/videos/musicArtist.mp4'}
         />
       </div>
 
@@ -76,7 +77,10 @@ Here at HarDan Music Group, we are committed to helping artists bag their rights
           <div className="grid gap-5 gap-y-5 pt-5 sm:grid-cols-2 sm:gap-y-12">
             {rightsProtect.map((item, index) => {
               return (
-                <div className="mx-auto w-4/5 rounded-xl border p-4 text-start shadow-lg dark:border-2 dark:border-neutral-600">
+                <div
+                  key={index}
+                  className="mx-auto w-4/5 rounded-xl border p-4 text-start shadow-lg dark:border-2 dark:border-neutral-600"
+                >
                   <div className="flex items-center gap-3">
                     <span>{servicesImage[item.title]}</span>
                     <h1
@@ -111,6 +115,7 @@ Here at HarDan Music Group, we are committed to helping artists bag their rights
               return (
                 <>
                   <Card
+                    key={index}
                     isBlurred
                     className="border-none bg-background/60 bg-gradient-to-tr from-[#FFB457] to-[#FF705B] sm:p-4 dark:bg-default-100/50"
                     shadow="sm"

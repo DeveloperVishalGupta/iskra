@@ -1,6 +1,8 @@
 'use client';
 import Image from 'next/image';
+
 import { Amazon, Spotify, YouTube } from '../assets/brand-Icons';
+
 import { title } from './primitives';
 
 export function VideoPromoCard({
@@ -14,7 +16,7 @@ export function VideoPromoCard({
     <div className="grid grid-cols-7 overflow-hidden rounded-2xl border-2 border-gray-400 dark:border-neutral-400">
       <div className="col-span-full sm:col-span-3">
         {video && (
-          <video className="h-full w-full" autoPlay loop muted playsInline>
+          <video autoPlay loop muted playsInline className="h-full w-full">
             <source src={video} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -22,8 +24,8 @@ export function VideoPromoCard({
         {image && (
           <Image
             alt="HeroUI hero Image"
-            src={image}
             className="!rounded-none"
+            src={image}
           />
         )}
       </div>

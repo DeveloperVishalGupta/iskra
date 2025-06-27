@@ -1,6 +1,7 @@
-import { title } from './primitives';
 import { getInTouch } from '../constant';
 import { CircleCheck } from '../assets/icons/icons';
+
+import { title } from './primitives';
 
 function GetInTouch() {
   return (

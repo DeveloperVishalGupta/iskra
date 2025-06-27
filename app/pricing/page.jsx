@@ -12,7 +12,7 @@ export default function PricingPage() {
             CHOOSE THE PERFECT PLAN TO MATCH YOUR GOALS
           </h1>
           <p className="text-lg font-semibold tracking-wide text-gray-400">
-            Wherever you are on your music journey, we've got a plan for you
+            {`  Wherever you are on your music journey, we've got a plan for you`}
           </p>
         </div>
         <div>

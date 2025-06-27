@@ -18,8 +18,8 @@ const MyGoogleMap = () => {
   return (
     <LoadScript googleMapsApiKey={'AIzaSyBiadaqtZvi6P8B-U3oe53tTKoFmgqIbvc'}>
       <MapComponent
-        mapContainerStyle={containerStyle}
         center={location}
+        mapContainerStyle={containerStyle}
         zoom={15}
       >
         <Marker position={location} />
