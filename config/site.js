@@ -1,5 +1,3 @@
-import { type } from 'os';
-
 export const siteConfig = {
   name: 'Next.js + HeroUI',
   description: 'Make beautiful websites regardless of your design experience.',
@@ -7,52 +5,79 @@ export const siteConfig = {
     {
       label: 'Home',
       href: '/',
-      type: 1,
-    },
-
-    {
-      label: 'Digital store',
-      href: '/digital-store',
-      type: 2,
+      type: 0,
     },
     {
-      label: 'Management rights',
-      href: '/rights-management/',
-      type: 2,
+      label: 'About Us',
+      href: '/',
+      submenus: [
+        { label: 'Board', href: '/', type: 0 },
+        { label: 'Leadership', href: '/', type: 0 },
+        { label: 'Partners', href: '/', type: 0 },
+        { label: 'Teaching at the right level', href: '/', type: 0 },
+        { label: 'Awards & Recognition', href: '/', type: 0 },
+        { label: 'Media & Publications', href: '/', type: 0 },
+        { label: 'Legal & Financial Information', href: '/', type: 0 },
+      ],
+      type: 0,
     },
     {
-      label: 'Youtube Monetization',
-      href: '/monetization',
-      type: 2,
+      label: 'Programs',
+      href: '/',
+      submenus: [
+        {
+          label: 'Education',
+          href: '/',
+          type: 0,
+          childSubMenu: [
+            { label: 'Hamara Gaon', href: '/', type: 0 },
+            { label: 'Early Childhood Education', href: '/', type: 0 },
+            { label: 'Inclusive Education (ENABLE)', href: '/', type: 0 },
+            { label: 'Elementary', href: '/', type: 0 },
+            { label: 'Second Chance', href: '/', type: 0 },
+            { label: 'Digital Initiatives', href: '/', type: 0 },
+          ],
+        },
+        { label: 'Vocational Training', href: '/', type: 0 },
+        { label: 'Annual Status of Education Report', href: '/', type: 0 },
+      ],
+      type: 0,
     },
     {
-      label: 'Publishing',
-      href: '/publishing',
-      type: 2,
+      label: 'Get Involved',
+      href: '/',
+      submenus: [
+        { label: 'Donate', href: '/', type: 0 },
+        { label: 'Internships', href: '/', type: 0 },
+      ],
+      type: 0,
     },
     {
-      label: 'Services',
-      href: '/services',
-      type: 1,
-    },
-    {
-      label: 'Music distribute',
-      href: '/distribute-your-music',
-      type: 1,
-    },
-    {
-      label: 'About',
-      href: '/about',
-      type: 1,
-    },
-    {
-      label: 'Pricing',
-      href: '/pricing',
+      label: 'Resources',
+      href: '/',
+      submenus: [
+        { label: 'Pratham Digital', href: '/', type: 0 },
+        { label: 'Stories of Change', href: '/', type: 0 },
+        {
+          label: 'Campaigns',
+          href: '/',
+          type: 0,
+          childSubMenu: [
+            { label: 'CAMaL Ka Camp 2025', href: '/', type: 0 },
+            { label: '/BeAnInfluencer', href: '/', type: 0 },
+            { label: 'IAmPratham', href: '/', type: 0 },
+            { label: '/ShuruaatAapse', href: '/', type: 0 },
+          ],
+        },
+        { label: 'Publications', href: '/', type: 0 },
+        { label: 'Annual Reports', href: '/', type: 0 },
+      ],
+      type: 0,
     },
     {
       label: 'Contact',
       href: '/contact',
-      type: 1,
+      type: 0,
     },
   ],
   navMenuItems: [

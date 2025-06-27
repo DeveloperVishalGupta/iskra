@@ -13,6 +13,7 @@
     "@heroui/button": "2.2.19",
     "@heroui/card": "^2.2.20",
     "@heroui/code": "2.2.14",
+    "@heroui/dropdown": "^2.3.22",
     "@heroui/image": "^2.2.13",
     "@heroui/input": "^2.4.19",
     "@heroui/kbd": "2.2.15",
@@ -22,7 +23,7 @@
     "@heroui/select": "^2.4.20",
     "@heroui/snippet": "2.2.20",
     "@heroui/switch": "2.2.17",
-    "@heroui/system": "2.4.15",
+    "@heroui/system": "^2.4.18",
     "@heroui/tabs": "^2.2.18",
     "@heroui/theme": "2.4.15",
     "@react-aria/ssr": "3.9.8",
@@ -44,11 +45,6 @@
     "@eslint/js": "9.25.1",
     "@next/eslint-plugin-next": "15.3.1",
     "@react-types/shared": "3.29.0",
-    "@types/node": "22.15.3",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.0",
-    "@typescript-eslint/eslint-plugin": "8.31.1",
-    "@typescript-eslint/parser": "8.31.1",
     "autoprefixer": "10.4.21",
     "eslint": "9.25.1",
     "eslint-config-next": "15.3.1",
@@ -65,7 +61,6 @@
     "prettier": "^3.6.1",
     "prettier-plugin-tailwindcss": "^0.6.13",
     "tailwind-variants": "0.3.0",
-    "tailwindcss": "3.4.16",
-    "typescript": "5.6.3"
+    "tailwindcss": "3.4.16"
   }
 }

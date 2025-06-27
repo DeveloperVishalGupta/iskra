@@ -1,11 +1,10 @@
 'use client';
 import { Input, Textarea } from '@heroui/input';
-import { title } from '../../components/primitives';
 import { Select, SelectItem } from '@heroui/select';
 import { Button } from '@heroui/button';
+
+import { title } from '../../components/primitives';
 import Discribe from '../../components/discribe';
-import GetInTouch from '../../components/GetInTouch';
-import { Card, CardBody } from '@heroui/card';
 import GoogleMap from '../../components/GoogleMap';
 import { contactNumbers } from '../../constant';
 // import {Card, CardHeader, CardBody, CardFooter} from "@heroui/react";
@@ -28,6 +27,7 @@ export default function ContactPage() {
           const origin = `${latitude},${longitude}`;
           const destination = `${destinationLatitude},${destinationLongitude}`;
           const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${destination}&travelmode=driving`;
+
           window.open(mapsUrl, '_blank');
         },
         (error) => {
@@ -41,6 +41,7 @@ export default function ContactPage() {
       alert('Geolocation is not supported by this browser.');
     }
   };
+
   return (
     <div className="flex flex-col gap-y-10">
       <div className="flex justify-center px-4 text-center md:text-start">
@@ -56,47 +57,47 @@ export default function ContactPage() {
           </div>
           <div className="row-span-2 flex w-full flex-col gap-4 rounded-lg bg-transGray px-4 py-8 sm:px-10">
             <Input
+              isClearable
+              isRequired
               label="Name"
+              placeholder="Enter your name"
               type="email"
               variant="faded"
-              placeholder="Enter your name"
-              isRequired
-              isClearable
             />
             <Select
               isRequired
               className=""
-              variant="faded"
               label="Select your prefrences"
               placeholder="Select prefrences"
+              variant="faded"
             >
               {prefrences.map((item) => (
                 <SelectItem key={item.key}>{item.label}</SelectItem>
               ))}
             </Select>
             <Input
+              isClearable
+              isRequired
               label="Mobile"
               placeholder="Enter your Mobile no."
-              variant="faded"
               type="mobile"
-              isRequired
-              isClearable
+              variant="faded"
             />{' '}
             <Input
+              isClearable
+              isRequired
               label="Email"
               placeholder="Enter your email"
-              variant="faded"
               type="email"
-              isRequired
-              isClearable
+              variant="faded"
             />
             <Textarea
-              isRequired
               isClearable
-              variant="faded"
-              minRows={4}
+              isRequired
               label="Description"
+              minRows={4}
               placeholder="Enter your description"
+              variant="faded"
             />
             <Button color="danger" variant="bordered">
               Send message
@@ -115,8 +116,8 @@ export default function ContactPage() {
             </div>
             <div className="mt-3 text-end">
               <Button
-                name="visit"
                 className="h-9 rounded-md bg-rose-500 py-1 font-medium text-white hover:bg-rose-600"
+                name="visit"
                 radius="full"
                 onPress={() => {
                   handleShowRoute();
@@ -137,8 +138,8 @@ export default function ContactPage() {
                   <div key={index}>
                     <div className="mx-4 my-2 rounded-md border-neutral-700 bg-neutral-600">
                       <a
-                        href={`tel:+91${item}`}
                         className="block py-2 text-white"
+                        href={`tel:+91${item}`}
                       >{`(+91) ${item}`}</a>
                     </div>
                   </div>
@@ -148,8 +149,8 @@ export default function ContactPage() {
 
             <div className="my-4">
               <a
-                href="mailto:spatikachemburdesk@gmail.com"
                 className="flex items-center text-white transition-colors hover:text-rose-500"
+                href="mailto:spatikachemburdesk@gmail.com"
               >
                 <svg
                   className="mr-3 h-6 w-6"
@@ -158,10 +159,10 @@ export default function ContactPage() {
                   viewBox="0 0 24 24"
                 >
                   <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
                 spatikachemburdesk@gmail.com

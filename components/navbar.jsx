@@ -1,18 +1,25 @@
+'use client';
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
   NavbarMenu,
   NavbarBrand,
   NavbarItem,
-  NavbarMenuItem,
 } from '@heroui/navbar';
 import { Kbd } from '@heroui/kbd';
-import { Link } from '@heroui/link';
 import { Input } from '@heroui/input';
 import { link as linkStyles } from '@heroui/theme';
 import NextLink from 'next/link';
 import clsx from 'clsx';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+} from '@heroui/dropdown';
+import { Button } from '@heroui/button';
+import Link from 'next/link';
 
 import { SearchIcon } from '../assets/icons/icons';
 import { siteConfig } from '../config/site';
@@ -20,7 +27,6 @@ import { headings } from '../constant';
 
 export const Navbar = () => {
   const pageRoutes = siteConfig.pageRoutes;
-  const [companyLinks, setCompanyLinks] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [query, setQuery] = useState('');
 
@@ -44,11 +50,6 @@ export const Navbar = () => {
     router.push(`${item.page}#${item.id}`);
   };
 
-  useEffect(() => {
-    if (pageRoutes.length > 0) {
-      setCompanyLinks(pageRoutes.filter((item) => item.type === 1));
-    }
-  }, [pageRoutes]);
   const searchInput = (
     <div>
       <Input
@@ -89,6 +90,71 @@ export const Navbar = () => {
     </div>
   );
 
+  const headerMenu = () => {
+    return pageRoutes.map((item, index) => {
+      if (item?.submenus?.length > 0) {
+        return (
+          <Dropdown key={index}>
+            <DropdownTrigger>
+              <Button
+                className="border-0 focus:outline-none"
+                variant="bordered"
+              >
+                {item.label}
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Link Actions">
+              {item.submenus.map((subMenuItem, subMenuIndex) => {
+                return (
+                  <DropdownItem
+                    key={subMenuIndex}
+                    className={clsx(
+                      linkStyles({ color: 'foreground' }),
+                      'data-[active=true]:font-medium data-[active=true]:text-primary'
+                    )}
+                    href={subMenuItem.href}
+                  >
+                    {subMenuItem.label}
+                    <ul className="ps-5 gap-2 flex flex-col">
+                      {subMenuItem?.childSubMenu?.length > 0 &&
+                        subMenuItem?.childSubMenu?.map((childSubMenuItem) => {
+                          return (
+                            <li
+                              key={childSubMenuItem.label}
+                              className="text-small "
+                            >
+                              <Link href={childSubMenuItem.href}>
+                                {childSubMenuItem.label}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                    </ul>
+                  </DropdownItem>
+                );
+              })}
+            </DropdownMenu>
+          </Dropdown>
+        );
+      } else {
+        return (
+          <NavbarItem key={item.href}>
+            <NextLink
+              className={clsx(
+                linkStyles({ color: 'foreground' }),
+                'data-[active=true]:font-medium data-[active=true]:text-primary'
+              )}
+              color="foreground"
+              href={item.href}
+            >
+              {item.label}
+            </NextLink>
+          </NavbarItem>
+        );
+      }
+    });
+  };
+
   return (
     <HeroUINavbar maxWidth="full" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -108,22 +174,7 @@ export const Navbar = () => {
         className="hidden basis-1/5 sm:flex sm:basis-full"
         justify="end"
       >
-        <ul className="ml-2 hidden justify-start gap-4 lg:flex">
-          {companyLinks?.map((item) => (
-            <NavbarItem key={item.href}>
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: 'foreground' }),
-                  'data-[active=true]:font-medium data-[active=true]:text-primary'
-                )}
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </NextLink>
-            </NavbarItem>
-          ))}
-        </ul>
+        {headerMenu()}
         <NavbarItem className="hidden gap-2 sm:flex">
           {/* <ThemeSwitch /> */}
         </NavbarItem>
@@ -138,13 +189,13 @@ export const Navbar = () => {
       <NavbarMenu>
         {searchInput}
         <div className="mx-4 mt-2 flex flex-col gap-2">
-          {companyLinks.map((item, index) => (
+          {/* {companyLinks.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link color={'foreground'} href={item.href} size="lg">
                 {item.label}
               </Link>
             </NavbarMenuItem>
-          ))}
+          ))} */}
         </div>
       </NavbarMenu>
     </HeroUINavbar>
