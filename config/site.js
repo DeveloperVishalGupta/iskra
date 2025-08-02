@@ -9,7 +9,47 @@ export const siteConfig = {
       href: '/',
       type: 1,
     },
+    {
+      label: 'About Us',
+      href: '/about',
+      type: 1,
+    },
 
+    {
+      label: 'Programs',
+      href: '/programs',
+      type: 1,
+    },
+    {
+      label: 'Get Involve',
+      href: '/involve',
+      type: 1,
+    },
+    {
+      label: 'Resource',
+      href: '/resource',
+      type: 1,
+    },
+
+    // {
+    //   label: 'Services',
+    //   href: '/services',
+    //   type: 1,
+    // },
+    // {
+    //   label: 'Music Distribution',
+    //   href: '/distribute-your-music',
+    //   type: 1,
+    // },
+    // {
+    //   label: 'Pricing',
+    //   href: '/pricing',
+    // },
+    {
+      label: 'Contact',
+      href: '/contact',
+      type: 1,
+    },
     {
       label: 'Digital stores',
       href: '/digital-store',
@@ -29,30 +69,6 @@ export const siteConfig = {
       label: 'Publishing',
       href: '/publishing',
       type: 2,
-    },
-    {
-      label: 'Services',
-      href: '/services',
-      type: 1,
-    },
-    {
-      label: 'Music Distribution',
-      href: '/distribute-your-music',
-      type: 1,
-    },
-    {
-      label: 'About',
-      href: '/about',
-      type: 1,
-    },
-    {
-      label: 'Pricing',
-      href: '/pricing',
-    },
-    {
-      label: 'Contact',
-      href: '/contact',
-      type: 1,
     },
   ],
   navMenuItems: [

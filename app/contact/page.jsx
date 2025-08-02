@@ -20,6 +20,11 @@ import {
   ModalHeader,
   useDisclosure,
 } from '@heroui/modal';
+import CustomButton from '../../components/Button';
+import { CaseStudies } from '../../assets';
+import PaymentComponent from '../../components/donate';
+import UnderDev from '../../components/UnderDev';
+// import Button as CustomButton from '../../components/Button';
 
 export const preferences = [
   { key: 'inquiry', label: 'Inquiry' },
@@ -127,13 +132,14 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex flex-col gap-y-10 lg:px-28">
+    <div className="flex flex-col gap-y-10 max-w-7xl mx-auto overflow-hidden bg-slate-100">
       <div className="px-4 flex justify-center text-center md:text-start">
         <h1 className={title({})}>Get In Touch</h1>
       </div>
-      <div className="text-center  md:text-start">
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="bg-transGray row-span-2 w-full flex flex-col gap-4 rounded-lg px-4 sm:px-10 py-8">
+      {/* <div className="text-center bg-red-200 md:text-start"> */}
+      <div className="grid md:grid-cols-2 gap-12">
+        <div className="px-6">
+          <div className="shadow-lg border-2 border-slate-200 bg-white rounded-xl row-span-2 w-full flex flex-col gap-4 px-4 sm:px-10 py-8">
             <Input
               name="name"
               label="Name"
@@ -206,44 +212,33 @@ export default function ContactPage() {
               Send message
             </Button>
           </div>
-
-          <div className="bg-neutral-800 p-6 rounded-lg">
-            <h3 className="text-2xl font-semibold text-white mb-4">Location</h3>
-            <div>
-              <p className="text-neutral-400">MTrax Digital Media Office</p>
-              <p className="text-neutral-400">
-                D-50, IT Chauraha, Nirala Nagar,
-              </p>
-              <p className="text-neutral-400">Lucknow, Uttar Pradesh 226020</p>
+        </div>
+        <div className=" flex flex-col gap-y-6 px-6">
+          <div className="bg-white border-slate-200 shadow-lg p-6 rounded-xl">
+            <h3 className="text-2xl font-semibold text-gray-800  mb-4">
+              Location
+            </h3>
+            <div className="text-neutral-700">
+              <p className="">MTrax Digital Media Office</p>
+              <p className="">D-50, IT Chauraha, Nirala Nagar,</p>
+              <p className="">Lucknow, Uttar Pradesh 226020</p>
             </div>
             <div className="text-end mt-3">
-              <Button
-                name="visit"
-                className="rounded-md bg-rose-500 hover:bg-rose-600 text-white font-medium py-1 h-9"
-                radius="full"
-                onPress={() => {
-                  handleShowRoute();
-                }}
-              >
-                Visit
-              </Button>
+              <CustomButton variant={'sm'} title={'Visit'} />
             </div>
           </div>
-
-          <div className="bg-neutral-800 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-white mb-4">
-              Contact Info
-            </h3>
+          <div className="bg-white p-6 border-slate-200 shadow-lg rounded-xl">
+            <h3 className="text-xl font-semibold mb-4">Contact Info</h3>
             <div className="grid text-center grid-cols-2">
               {contactNumbers.map((item, index) => {
                 if (item.type === 1) {
                   return (
                     <div key={index}>
-                      <div className="border-neutral-700 rounded-md  flex items-center justify-center gap-2  bg-neutral-600 my-2 mx-4 ">
-                        <PhoneIcon color={'#fff'} />
+                      <div className=" rounded-md  flex items-center justify-center gap-2 shadow-sm border-2 border-slate-200 my-2 mx-4 ">
+                        <PhoneIcon color={'#1f2937'} />
                         <Link
                           href={`tel:+91${item.phone}`}
-                          className="text-white py-2 block"
+                          className="text-gray-800 py-2 block"
                         >{`(+91) ${item.phone}`}</Link>
                       </div>
                     </div>
@@ -264,12 +259,12 @@ Looking forward to hearing from you. Thanks!`
                   const whatsappUrl = `https://wa.me/91${item.phone}?text=${message}`;
                   return (
                     <div key={index}>
-                      <div className="border-neutral-700 rounded-md flex items-center justify-center gap-2 bg-neutral-600 my-2 mx-4 ">
+                      <div className="border-slate-200 border-2 shadow-sm rounded-md flex items-center justify-center gap-2  my-2 mx-4 ">
                         <WhatsappIcon />
                         <Link
                           target="_blank"
                           href={whatsappUrl}
-                          className="text-white py-2 block"
+                          className="text-gray-800 py-2 block"
                         >{`(+91) ${item.phone}`}</Link>
                       </div>
                     </div>
@@ -278,7 +273,7 @@ Looking forward to hearing from you. Thanks!`
               })}
             </div>
 
-            <div className="my-4">
+            <div className="m-4  ">
               <Link
                 target="_blank"
                 href={`mailto:mtraxdigitalmedia@gmail.com?subject=${encodeURIComponent('Music Service Inquiry')}&body=${encodeURIComponent(
@@ -302,23 +297,67 @@ Looking forward to hearing from you. Thanks!`
                 mtraxdigitalmedia@gmail.com
               </Link>
             </div>
-            <div className="mt-6">
-              <h3 className="text-2xl font-semibold text-white mb-4">Hours</h3>
-              <div className="space-y-2">
-                <p className="text-neutral-400">
-                  Monday - Friday: 10:00 AM - 8:00 PM
-                </p>
-                <p className="text-neutral-400">
-                  Saturday: 10:00 AM - 01:00 PM
-                </p>
+
+            <div className="">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                Hours
+              </h3>
+              <div className="space-y-2 text-gray-800">
+                <p className="">Monday - Friday: 10:00 AM - 8:00 PM</p>
+                <p className="">Saturday: 10:00 AM - 01:00 PM</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {/* </div> */}
 
-      <div className="px-4 sm:px-0">
-        <Discribe />
+      <div className="px-4 sm:px-0 border max-w-7xl lg:px-6">
+        <div className="px-4 flex my-12 justify-center text-center md:text-start">
+          <h1 className={title({})}>Case Study</h1>
+        </div>
+        <div
+          className={` ${CaseStudies?.length > 0 ? 'grid-cols-3' : 'grid-cols-1'} grid gap-6  mb-12`}
+        >
+          {CaseStudies?.length > 0 ? (
+            CaseStudies?.map((caseStudyData, index) => {
+              return (
+                <div key={index}>
+                  <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                    {/* Header Section */}
+                    <header className="bg-gradient-to-r from-blue-600 to-blue-800 p-6 sm:p-8 lg:p-4 line-clamp-2  rounded-t-xl">
+                      <h1 className="text-2xl font-semibold text-white text-center mb-2 py-2">
+                        {caseStudyData.title}
+                      </h1>
+                      <p className="text-blue-100 line-clamp-1 text-lg sm:text-xl text-center">
+                        {caseStudyData.subtitle}
+                      </p>
+                    </header>
+
+                    {/* Introduction Section */}
+                    <section className="p-6 sm:p-8 lg:p-4 border-b border-gray-200">
+                      <h2 className="text-xl font-semibold text-blue-700 mb-4">
+                        Introduction
+                      </h2>
+                      <p className="text-gray-700 leading-relaxed line-clamp-4">
+                        {caseStudyData.introduction}
+                      </p>
+                      <div className="mt-8 text-end">
+                        <CustomButton
+                          title={'Read More '}
+                          variant={'sm'}
+                          className=""
+                        />
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <UnderDev section={'case study'} />
+          )}
+        </div>
       </div>
       {/* ❌ Error Modal for Missing Fields */}
       <Modal isOpen={isErrorOpen} onOpenChange={onErrorOpenChange}>

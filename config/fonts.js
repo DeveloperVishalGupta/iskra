@@ -1,11 +1,21 @@
-import { Inter as FontSans } from 'next/font/google';
+import { Inter } from 'next/font/google';
+import { Asap } from 'next/font/google';
 
-export const fontSans = FontSans({
+export const fontSans = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
+  display: 'swap',
 });
 
-// export const fontMono = FontMono({
+export const fontAsap = Asap({
+  subsets: ['latin'],
+  variable: '--font-asap',
+  display: 'swap',
+});
+
+// If you want to use a monospace font, you can uncomment and define it here
+// import { Fira_Code } from 'next/font/google';
+// export const fontMono = Fira_Code({
 //   subsets: ['latin'],
 //   variable: '--font-mono',
 // });

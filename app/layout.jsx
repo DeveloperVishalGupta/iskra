@@ -2,7 +2,7 @@
 import '../styles/globals.css';
 import clsx from 'clsx';
 import { Providers } from './providers';
-import { fontSans } from '../config/fonts';
+import { fontSans, fontAsap } from '../config/fonts';
 import { Navbar } from '../components/navbar';
 import GetInTouch from '../components/GetInTouch';
 import { title } from '../components/primitives';
@@ -29,13 +29,13 @@ export default function RootLayout({ children }) {
         <meta charSet="UTF-8" />
       </head>
       <body
-        className={clsx(
-          'min-h-screen text-foreground bg-background font-sans antialiased',
-          fontSans.variable
-        )}
+        className={`${clsx(
+          'min-h-screen text-foreground no-visible-scrollbar bg-background font-sans antialiased'
+          // fontSans.variable
+        )} ${fontAsap.className}`}
       >
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
-          <div className="relative flex flex-col h-screen">
+          <div className="relative flex flex-col h-screen 1">
             <Navbar />
             <main className="capitalize">{children}</main>
             <footer className="w-full px-0 sm:px-36 py-3">
@@ -99,12 +99,12 @@ export default function RootLayout({ children }) {
                       MTrax
                     </span>{' '}
                     Digital Media
-                  </p>|
-                  <p className=''>
+                  </p>
+                  |
+                  <p className="">
                     Design & Developed by
                     <Link
-                      className='font-semibold text-xl text-inherit'
-                      
+                      className="font-semibold text-xl text-inherit"
                       href={'https://developervishalgupta.github.io/portfolio/'}
                       target="_blank"
                     >

@@ -9,7 +9,8 @@ export function Providers({ children, themeProps }) {
 
   return (
     <HeroUIProvider navigate={router.push}>
-      <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+      {/* <NextThemesProvider {...themeProps}>{children}</NextThemesProvider> */}
+      {children}
     </HeroUIProvider>
   );
 }

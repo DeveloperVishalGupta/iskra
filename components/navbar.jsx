@@ -22,12 +22,29 @@ import { useEffect, useState } from 'react';
 import { headings } from '../constant';
 import Image from 'next/image';
 import MTDM from '../assets/images/MTDM.png';
+import Iskra from '../assets/images/logos/Iskra.jpg';
+import { Button } from '@heroui/button';
+import CustomButton from './Button';
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  useDisclosure,
+} from '@heroui/modal';
+import PaymentComponent from './donate';
+// import Router from 'next/router';
+import { usePathname } from 'next/navigation';
 
 export const Navbar = () => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const pageRoutes = siteConfig.pageRoutes;
   const [companyLinks, setCompanyLinks] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [query, setQuery] = useState('');
+  const currentPage = usePathname()
+// console.log();
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -54,66 +71,75 @@ export const Navbar = () => {
     }
   }, [pageRoutes]);
 
-  const searchInput = (
-    <div>
-      <Input
-        aria-label="Search"
-        classNames={{
-          inputWrapper: 'bg-default-100',
-          input: 'text-sm',
-        }}
-        endContent={
-          <Kbd className="hidden lg:inline-block" keys={['command']}>
-            K
-          </Kbd>
-        }
-        labelPlacement="outside"
-        placeholder="Search..."
-        startContent={
-          <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-        }
-        type="search"
-        value={query}
-        onChange={handleChange}
-      />
-
-      {filtered.length > 0 && (
-        <ul className="border dark:bg-black bg-white rounded mt-2 shadow absolute right-6 max-w-96">
-          {filtered.map((item, index) => (
-            <li
-              key={index}
-              className="p-2 dark:hover:bg-neutral-700 hover:bg-neutral-200 cursor-pointer  whitespace-normal"
-              onClick={() => handleSelect(item)}
-            >
-              {item.title}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-
   return (
-    <HeroUINavbar maxWidth="full" className="py-2" position="sticky">
-      <NavbarContent className="basis-1/5 sm:basis-full " justify="start">
+    <>
+      <div className="navbar grid grid-cols-12 gap-6 items-center py-1">
+        <div className="col-span-2 ">
+          <NextLink className="" href="/">
+            <Image
+              src={Iskra}
+              alt="MTrax Digital Media"
+              about="this is a logo of Iskra"
+              width={92}
+              className="ms-auto"
+            />
+          </NextLink>
+        </div>
+        <div className="col-span-8 ">
+          <ul className="hidden lg:flex justify-center gap-6  ml-2">
+            {console.log(companyLinks, currentPage)
+            }
+            {companyLinks?.map((item) => (
+              <li key={item.href}>
+                <NextLink
+                  className={clsx(
+                    linkStyles({ color: 'foreground' }),
+                    'data-[active=true]:text-primary  text-xl font-medium hover:text-primaryBlue data-[active=true]:font-medium capitalize'
+                  )}
+                  style={{color:currentPage ===item.href ?'#00adef':'' }}
+                  color="foreground"
+                  href={item.href}
+                >
+                  {item.label}
+                </NextLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="col-span-2">
+          <NextLink className="" href="/donate">
+            <CustomButton
+              title={'Donate Now'}
+
+              // radius="sm"
+              // className="bg-primaryBlue text-white font-semibold text-lg"
+            />
+            {/* 
+            </CustomButton> */}
+          </NextLink>
+        </div>
+      </div>
+      {/* <HeroUINavbar maxWidth="full" className="py-2 heroUiNavbar flex" position="sticky">
+      <NavbarContent className="basis-1/5 sm:basis-full 2222" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink
-            className="flex justify-start items-center gap-1 ms-20 py-4"
+            className="ms-8"
             href="/"
           >
             <Image
-              src={MTDM}
+              src={Iskra}
               alt="MTrax Digital Media"
-              about="this is a logo of MTDM"
-              width={100}
+              about="this is a logo of Iskra"
+              width={92}
             />
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
+      <div >hello</div>
 
       <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
-        justify="end"
+        className="hidden bg-slate-200 w-full sm:flex basis-1/5 sm:basis-full col-span-2"
+        // justify="center"
       >
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
           {companyLinks?.map((item) => (
@@ -121,7 +147,7 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: 'foreground' }),
-                  'data-[active=true]:text-primary  data-[active=true]:font-medium capitalize'
+                  'data-[active=true]:text-primary  text-lg data-[active=true]:font-medium capitalize'
                 )}
                 color="foreground"
                 href={item.href}
@@ -131,29 +157,65 @@ export const Navbar = () => {
             </NavbarItem>
           ))}
         </ul>
-        <NavbarItem className="hidden sm:flex gap-2">
-          <ThemeSwitch />
-        </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <ThemeSwitch />
-        <NavbarMenuToggle>hello</NavbarMenuToggle>
+       <NavbarContent className="basis-1/5 sm:basis-full 2222" justify="end">
+        <NavbarItem as="li" className="gap-3 me-8">
+          <NextLink
+            className="ms-20"
+            href="/"
+          >
+            <Button
+              radius='sm'
+              className='bg-primaryBlue text-white font-semibold text-lg'
+            >
+              Donate Now
+            </Button>
+            
+          </NextLink>
+        </NavbarItem>
       </NavbarContent>
+
 
       <NavbarMenu>
-        {searchInput}
+        
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {companyLinks.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <Link color={'foreground'} href={item.href} size="lg">
+              <Link
+                color={'foreground'}
+                href={item.href}
+                size="lg"
+                className="text-xl"
+              >
                 {item.label}
               </Link>
             </NavbarMenuItem>
           ))}
         </div>
       </NavbarMenu>
-    </HeroUINavbar>
+    </HeroUINavbar> */}
+      {/* <Button  className='w-full bg-red-400'>Open Modal</Button> */}
+      {/* <Modal isOpen={isOpen} onOpenChange={onOpenChange} size={'2xl'}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
+              <ModalBody className='overflow-scroll'>
+               <PaymentComponent/>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+                <Button color="primary" onPress={onClose}>
+                  Action
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal> */}
+    </>
   );
 };

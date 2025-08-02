@@ -1,6 +1,43 @@
-import { details } from 'framer-motion/client';
-import { type } from 'os';
-import { title } from 'process';
+import AnitaAromatic from '../assets/images/AnitaAromatic.png';
+import g1 from '../assets/images/gallary/g-1.jpeg';
+import g2 from '../assets/images/gallary/g-2.jpeg';
+import g3 from '../assets/images/gallary/g-3.jpeg';
+import g4 from '../assets/images/gallary/g-4.jpeg';
+import g5 from '../assets/images/gallary/g-5.jpeg';
+import g6 from '../assets/images/gallary/g-6.jpeg';
+import g7 from '../assets/images/gallary/g-7.jpeg';
+import g8 from '../assets/images/gallary/g-8.jpeg';
+import g9 from '../assets/images/gallary/g-9.jpeg';
+import g10 from '../assets/images/gallary/g-10.jpeg';
+import g11 from '../assets/images/gallary/g-11.jpg';
+import g12 from '../assets/images/gallary/g-12.jpg';
+import g13 from '../assets/images/gallary/g-13.png';
+import g14 from '../assets/images/gallary/g-14.png';
+import g15 from '../assets/images/gallary/g-15.jpg';
+import g16 from '../assets/images/gallary/g-16.jpg';
+import g17 from '../assets/images/gallary/g-17.png';
+import g18 from '../assets/images/gallary/g-18.png';
+
+export const gallaryImages = [
+  g1,
+  g2,
+  g3,
+  g4,
+  g5,
+  g6,
+  g7,
+  g8,
+  g9,
+  g10,
+  g11,
+  g12,
+  g13,
+  g14,
+  g15,
+  g16,
+  g17,
+  g18,
+];
 
 export const getInTouch = [
   {
@@ -570,4 +607,82 @@ export const top6Musics = [
   },
   { link: 'https://www.youtube.com/embed/61TrcabmVkw?si=0N5-s96DLLFtMA-s' },
   { link: 'https://www.youtube.com/embed/lV6y34Cof_4?si=bgOtekU883SyU-7j' },
+];
+
+export const partenrs = [
+  {
+    title: 'Anita Aromatic',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'Argan QOD',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'Brazilian Hairtech',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'Deplieve',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'Jeannot',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'Kanpeki',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'Loreal',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'Moroccan Oil',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'O3',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'Olaplex',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'Raaga',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'Remy Laure',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'Richfeel',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'Spatika',
+    img: AnitaAromatic,
+    discription: '',
+  },
+  {
+    title: 'Wella Professional',
+    img: AnitaAromatic,
+    discription: '',
+  },
 ];

@@ -10,6 +10,8 @@ const config = {
   theme: {
     extend: {
       colors: {
+        primaryBlue: '#00adef',
+        primaryRed: '#f51f35',
         lightThemeBackgroundColor: '#fff',
         lightThemePrimaryText: '#C62828',
         lightThemeSecondryText: '#0D47A1',

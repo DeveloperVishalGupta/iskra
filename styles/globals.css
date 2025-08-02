@@ -11,3 +11,19 @@
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.pageTabs button {
+  height: 2.5rem;
+  padding: 0.5rem 0.75rem;
+}
+.pageTabs button div {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.heroUiNavbar header {
+  height: unset !important;
+}
