@@ -3,31 +3,11 @@ import { Input, Textarea } from '@heroui/input';
 import { title } from '../../components/primitives';
 import { Select, SelectItem } from '@heroui/select';
 import { Button } from '@heroui/button';
-import Discribe from '../../components/discribe';
-import GetInTouch from '../../components/GetInTouch';
-import { Card, CardBody } from '@heroui/card';
-import GoogleMap from '../../components/GoogleMap';
-import { contactNumbers, gallaryImages, partenrs } from '../../constant';
-import { WhatsappIcon } from '../../assets/brand-Icons';
-import { PhoneIcon } from '../../assets/icons/icons';
-import Link from 'next/link';
+
 import { useState } from 'react';
-import {
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  useDisclosure,
-} from '@heroui/modal';
-import CustomButton from '../../components/Button';
-import { CaseStudies } from '../../assets';
-import PaymentComponent from '../../components/donate';
-import Gallery from '../../components/gallery';
-import UnderDev from '../../components/UnderDev';
+import { useDisclosure } from '@heroui/modal';
+
 import { FileUpload } from '../../components/ui/file-upload';
-// import Button as CustomButton from '../../components/Button';
-// import
 
 export const preferences = [
   { key: 'inquiry', label: 'Inquiry' },
@@ -46,7 +26,7 @@ export const involmentPossion = [
 ];
 
 export default function InvolvePage() {
-    const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState([]);
   const handleFileUpload = (files) => {
     setFiles(files);
     console.log(files);
@@ -72,29 +52,6 @@ export default function InvolvePage() {
     email: '',
     description: '',
   });
-  const destinationLatitude = 26.872576;
-  const destinationLongitude = 80.937831;
-  const handleShowRoute = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          const origin = `${latitude},${longitude}`;
-          const destination = `${destinationLatitude},${destinationLongitude}`;
-          const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${destination}&travelmode=driving`;
-          window.open(mapsUrl, '_blank');
-        },
-        (error) => {
-          alert(
-            'Error fetching location. Please allow location access in your browser.'
-          );
-          console.error(error);
-        }
-      );
-    } else {
-      alert('Geolocation is not supported by this browser.');
-    }
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -170,7 +127,7 @@ export default function InvolvePage() {
             onChange={handleChange}
           />
 
-           <Input
+          <Input
             name="email"
             label="Email Id"
             placeholder="Enter your email id"
@@ -181,7 +138,6 @@ export default function InvolvePage() {
             value={formData.email}
             onChange={handleChange}
           />
-          
 
           <Input
             name="mobile"
@@ -194,7 +150,7 @@ export default function InvolvePage() {
             value={formData.mobile}
             onChange={handleChange}
           />
-<Select
+          <Select
             name="possition"
             label="Possition"
             placeholder="Which Position are you interested in?"
@@ -221,11 +177,8 @@ export default function InvolvePage() {
           />
 
           <div className="w-full max-w-4xl mx-auto  border-2 border-dashed bg-white border-slate-300 rounded-lg">
-      <FileUpload onChange={handleFileUpload} />
-    </div>
-         
-
-          
+            <FileUpload onChange={handleFileUpload} />
+          </div>
 
           <Button
             type="button"

@@ -1,9 +1,4 @@
-import { HeroSectionTemp } from '../../components/heroSectionTemp';
 import { title } from '../../components/primitives';
-import { VideoPromoCard } from '../../components/VideoPromoCard';
-import youtube from '../../assets/images/youtube.jpg';
-import Discribe from '../../components/discribe';
-import { Timeline } from '../../components/ui/timeline';
 
 export const YoutubeMonetizationSteps = [
   {

@@ -43,8 +43,8 @@ export const Navbar = () => {
   const [companyLinks, setCompanyLinks] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [query, setQuery] = useState('');
-  const currentPage = usePathname()
-// console.log();
+  const currentPage = usePathname();
+  // console.log();
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -87,8 +87,7 @@ export const Navbar = () => {
         </div>
         <div className="col-span-8 ">
           <ul className="hidden lg:flex justify-center gap-6  ml-2">
-            {console.log(companyLinks, currentPage)
-            }
+            {console.log(companyLinks, currentPage)}
             {companyLinks?.map((item) => (
               <li key={item.href}>
                 <NextLink
@@ -96,7 +95,7 @@ export const Navbar = () => {
                     linkStyles({ color: 'foreground' }),
                     'data-[active=true]:text-primary  text-xl font-medium hover:text-primaryBlue data-[active=true]:font-medium capitalize'
                   )}
-                  style={{color:currentPage ===item.href ?'#00adef':'' }}
+                  style={{ color: currentPage === item.href ? '#00adef' : '' }}
                   color="foreground"
                   href={item.href}
                 >

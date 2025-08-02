@@ -3,10 +3,6 @@ import { Input, Textarea } from '@heroui/input';
 import { title } from '../../components/primitives';
 import { Select, SelectItem } from '@heroui/select';
 import { Button } from '@heroui/button';
-import Discribe from '../../components/discribe';
-import GetInTouch from '../../components/GetInTouch';
-import { Card, CardBody } from '@heroui/card';
-import GoogleMap from '../../components/GoogleMap';
 import { contactNumbers } from '../../constant';
 import { WhatsappIcon } from '../../assets/brand-Icons';
 import { PhoneIcon } from '../../assets/icons/icons';
@@ -22,9 +18,7 @@ import {
 } from '@heroui/modal';
 import CustomButton from '../../components/Button';
 import { CaseStudies } from '../../assets';
-import PaymentComponent from '../../components/donate';
 import UnderDev from '../../components/UnderDev';
-// import Button as CustomButton from '../../components/Button';
 
 export const preferences = [
   { key: 'inquiry', label: 'Inquiry' },
