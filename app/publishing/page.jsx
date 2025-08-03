@@ -1,8 +1,6 @@
 import { title } from '../../components/primitives';
 import { Timeline } from '../../components/ui/timeline';
-import { VideoPromoCard } from '../../components/VideoPromoCard';
 import { publishingRoyalties } from '../../constant';
-import musicPublished from '../../assets/images/musicPublished.jpg';
 import { HeroSectionTemp } from '../../components/heroSectionTemp';
 
 export default function PublishingPage() {
@@ -139,22 +137,6 @@ export default function PublishingPage() {
             })}
           </div>
         </div>
-      </div>
-
-      <div className="px-4 sm:px-0">
-        <VideoPromoCard
-          image={musicPublished}
-          heading={
-            <h1 className={`${title({ size: 'sm' })} font-semibold  `}>
-              Your Best Music
-              <span className="text-lightThemePrimaryText dark:text-darkThemePrimaryText">
-                {' '}
-                Publishing Partner{' '}
-              </span>
-            </h1>
-          }
-          details={`Are you an artist? No more worries about publishing music or collecting royalties. We help you publish music on the right platform and get you the royalties you deserve.`}
-        />
       </div>
       <div className="">
         <HeroSectionTemp
