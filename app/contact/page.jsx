@@ -19,6 +19,9 @@ import {
 import CustomButton from '../../components/Button';
 import { CaseStudies } from '../../assets';
 import UnderDev from '../../components/UnderDev';
+// import { involmentPossion } from '../involve/page';
+import { FileUpload } from '../../components/ui/file-upload';
+import { Calender, Mail } from '../../constant/Icons';
 
 export const preferences = [
   { key: 'inquiry', label: 'Inquiry' },
@@ -71,6 +74,11 @@ export default function ContactPage() {
     } else {
       alert('Geolocation is not supported by this browser.');
     }
+  };
+  const [files, setFiles] = useState([]);
+  const handleFileUpload = (files) => {
+    setFiles(files);
+    console.log(files);
   };
 
   const handleChange = (e) => {
@@ -126,13 +134,12 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex flex-col gap-y-10 max-w-7xl mx-auto overflow-hidden bg-slate-100">
+    <div className="flex flex-col gap-y-10 w-4/5  mx-auto overflow-hidden ">
       <div className="px-4 flex justify-center text-center md:text-start">
         <h1 className={title({})}>Get In Touch</h1>
       </div>
-      {/* <div className="text-center bg-red-200 md:text-start"> */}
-      <div className="grid md:grid-cols-2 gap-12">
-        <div className="px-6">
+      <div className="grid grid-cols-2 gap-6 ">
+        <div className="col-span-2">
           <div className="shadow-lg border-2 border-slate-200 bg-white rounded-xl row-span-2 w-full flex flex-col gap-4 px-4 sm:px-10 py-8">
             <Input
               name="name"
@@ -146,36 +153,10 @@ export default function ContactPage() {
               onChange={handleChange}
             />
 
-            <Select
-              name="preference"
-              label="Select your preferences"
-              placeholder="Select preferences"
-              variant="faded"
-              isRequired
-              selectedKeys={[formData.preference]}
-              onSelectionChange={(keys) => handleSelectChange([...keys][0])}
-            >
-              {preferences.map((item) => (
-                <SelectItem key={item.key}>{item.label}</SelectItem>
-              ))}
-            </Select>
-
-            <Input
-              name="mobile"
-              label="Mobile"
-              placeholder="Enter your Mobile no."
-              variant="faded"
-              type="tel"
-              isRequired
-              isClearable
-              value={formData.mobile}
-              onChange={handleChange}
-            />
-
             <Input
               name="email"
-              label="Email"
-              placeholder="Enter your email"
+              label="Email Id"
+              placeholder="Enter your email id"
               variant="faded"
               type="email"
               isRequired
@@ -184,10 +165,35 @@ export default function ContactPage() {
               onChange={handleChange}
             />
 
+            <Input
+              name="mobile"
+              label="Contact Number"
+              placeholder="Enter your Mobile Number"
+              variant="faded"
+              type="tel"
+              isRequired
+              isClearable
+              value={formData.mobile}
+              onChange={handleChange}
+            />
+            <Select
+              name="position"
+              label="position"
+              placeholder="Which Position are you interested in?"
+              variant="faded"
+              isRequired
+              selectedKeys={[formData.preference]}
+              onSelectionChange={(keys) => handleSelectChange([...keys][0])}
+            >
+              {involmentPossion.map((item) => (
+                <SelectItem key={item.key}>{item.label}</SelectItem>
+              ))}
+            </Select>
+
             <Textarea
               name="description"
-              label="Description"
-              placeholder="Enter your description"
+              label="Anything you would like to tell"
+              placeholder="Enter what you want"
               variant="faded"
               minRows={4}
               isRequired
@@ -195,6 +201,10 @@ export default function ContactPage() {
               value={formData.description}
               onChange={handleChange}
             />
+
+            <div className="w-full mx-auto  border-2 border-dashed bg-white border-slate-300 rounded-lg">
+              <FileUpload onChange={handleFileUpload} />
+            </div>
 
             <Button
               type="button"
@@ -207,8 +217,7 @@ export default function ContactPage() {
             </Button>
           </div>
         </div>
-        <div className=" flex flex-col gap-y-6 px-6">
-          <div className="bg-white border-slate-200 shadow-lg p-6 rounded-xl">
+         <div className="bg-white border border-slate-200 shadow-lg p-6 rounded-xl">
             <h3 className="text-2xl font-semibold text-gray-800  mb-4">
               Location
             </h3>
@@ -220,9 +229,9 @@ export default function ContactPage() {
             <div className="text-end mt-3">
               <CustomButton variant={'sm'} title={'Visit'} />
             </div>
-          </div>
-          <div className="bg-white p-6 border-slate-200 shadow-lg rounded-xl">
-            <h3 className="text-xl font-semibold mb-4">Contact Info</h3>
+        </div>
+         <div className="bg-white border p-6 border-slate-200 shadow-lg rounded-xl">
+            <h3 className="text-2xl font-semibold mb-4">Contact Info</h3>
             <div className="grid text-center grid-cols-2">
               {contactNumbers.map((item, index) => {
                 if (item.type === 1) {
@@ -239,16 +248,7 @@ export default function ContactPage() {
                   );
                 } else {
                   const message = encodeURIComponent(
-                    `Hello!! MTrax Digital Media
-      
-I'm interested in your services.
-Could you please share more details?
-
-Here's my contact info:
-Phone: +91 XXXXX XXXXX
-Email: myEmail@gmail.com  
-
-Looking forward to hearing from you. Thanks!`
+                    `Hi! I visited your website and would like to know more. Please assist me with my query.`
                   );
                   const whatsappUrl = `https://wa.me/91${item.phone}?text=${message}`;
                   return (
@@ -270,44 +270,34 @@ Looking forward to hearing from you. Thanks!`
             <div className="m-4  ">
               <Link
                 target="_blank"
-                href={`mailto:mtraxdigitalmedia@gmail.com?subject=${encodeURIComponent('Music Service Inquiry')}&body=${encodeURIComponent(
+                href={`mailto:iskrateam15@gmail.com?subject=${encodeURIComponent('Music Service Inquiry')}&body=${encodeURIComponent(
                   "Hello!! MTrax Digital Media, \n\n I'm interested in your services.\nCould you please share more details?\n\nHere's my contact info:\nPhone: +91 XXXXX XXXXX\nEmail: myEmail@gmail.com\n\nLooking forward to hearing from you. Thanks!"
                 )}`}
-                className="flex items-center transition-colors"
+                className="flex items-center lowercase transition-colors"
               >
-                <svg
-                  className="w-6 h-6 mr-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-                mtraxdigitalmedia@gmail.com
-              </Link>
+              <Mail />
+              <span>
+                iskrateam15@gmail.com
+              </span>
+            </Link>
+            <div className='flex gap-1 items-center'>
+              <span className='me-2'>
+                 <Calender resorce={{
+                width: 24,
+                height:20
+ }} />
+             </span>
+                <p className="">Monday - Saturday: 10:00 AM - 8:00 PM</p>
+            </div>
+            
             </div>
 
-            <div className="">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                Hours
-              </h3>
-              <div className="space-y-2 text-gray-800">
-                <p className="">Monday - Friday: 10:00 AM - 8:00 PM</p>
-                <p className="">Saturday: 10:00 AM - 01:00 PM</p>
-              </div>
-            </div>
+           
           </div>
-        </div>
       </div>
-      {/* </div> */}
 
-      <div className="px-4 sm:px-0 border max-w-7xl lg:px-6">
-        <div className="px-4 flex my-12 justify-center text-center md:text-start">
+      <div className="">
+        <div className="flex my-4 justify-center text-center md:text-start">
           <h1 className={title({})}>Case Study</h1>
         </div>
         <div

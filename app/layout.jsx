@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
           <div className="relative flex flex-col h-screen 1">
             <Navbar />
-            <main className="capitalize">{children}</main>
+            <main className="capitalize bg-slate-100">{children}</main>
             <footer className="w-full px-0 sm:px-36 py-3">
               <div className="flex justify-center items-center">
                 <div

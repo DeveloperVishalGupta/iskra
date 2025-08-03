@@ -20,11 +20,11 @@ export const siteConfig = {
       href: '/programs',
       type: 1,
     },
-    {
-      label: 'Get Involve',
-      href: '/involve',
-      type: 1,
-    },
+    // {
+    //   label: 'Get Involve',
+    //   href: '/involve',
+    //   type: 1,
+    // },
     {
       label: 'Resource',
       href: '/resource',

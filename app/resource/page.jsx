@@ -13,17 +13,19 @@ export const preferences = [
 export default function ResourcePage() {
   return (
     <div className="flex flex-col w-full items-center gap-y-10  overflow-hidden ">
-      <div className="w-4/5 h-[calc(100vh-6rem)] border  py-8 md:py-10 ">
+      <div className="w-4/5 h-[calc(100vh-6rem)] py-8 md:py-10 ">
         <div className=" mb-8 flex justify-center text-center md:text-start">
           <h1 className={title({})}>Annual Report</h1>
         </div>
+        <div className='mt-24'>
         <UnderDev section={'annual report'} />
+        </div>
       </div>
       <div className="px-4 flex justify-center text-center md:text-start">
         <h1 className={title({})}>Our Gallary</h1>
       </div>
 
-      <div className="w-4/5">
+      <div className="w-4/5 mb-6">
         <Gallery
           heading={'Our Partners'}
           headingText={

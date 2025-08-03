@@ -582,12 +582,12 @@ export const headings = [
 
 export const contactNumbers = [
   {
-    phone: '9326719497',
+    phone: '8169639763',
     type: 1,
   },
 
   {
-    phone: '9326719497',
+    phone: '8169639763',
     type: 2,
   },
 ];
