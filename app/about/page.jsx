@@ -1,7 +1,6 @@
 'use client';
 import { title } from '../../components/primitives';
-import { musicPlatforms, whatOffers } from '../../constant';
-import singer from '../../assets/images/singer.jpg';
+import {  whatOffers } from '../../constant';
 import { HoverEffect } from '../../components/ui/card-hover-effect';
 // import { aboutUsHeroImage } from '../../assets';
 
@@ -16,7 +15,7 @@ import { VideoPromoCard } from '../../components/VideoPromoCard';
 import { TextOnGlass } from '../../components/TextOnGlass';
 import Image from 'next/image';
 // import { aboutUsHeroImage } from '../../assets';
-import aboutUsHeroImage from '../../assets/images/concert.jpg';
+import aboutUsHeroImage from '../../assets/images/donate11.jpg';
 import { Tab, Tabs } from '@heroui/tabs';
 import { Card, CardBody, CardHeader } from '@heroui/card';
 // import worldwideDistributionServiceImage from '../../assets/images/services-1.jpg';
@@ -29,30 +28,16 @@ export default function AboutPage() {
       label: 'About',
       content: {
         introduction: [
-          'Pratham is an innovative learning organization created to improve the quality of education in India. As one of the largest non-governmental organizations in the country, Pratham focuses on high-quality, low-cost, and replicable interventions to address gaps in the education system. Established in 1995 to provide education to children in the slums of Mumbai, Pratham has grown both in scope and geographical coverage.',
-          'Pratham means "first" in Sanskrit. True to its name, it is the first major organization to achieve lasting, wide-scale success in India\'s educational landscape. This has been made possible due to various policies and strategies adopted by the organization.',
+          'Integrated Sustainable Knowledge and Research Academy (ISKRA) is a non-profit organization established in 2015 with a mission to work on the Right to food, Community Development, and Empowerment of Women in Maharashtra. The organizational areas of interventions include Right to food, Health, Advocacy for Human Rights, Women Empowerment, Livelihood, Community Development, and Financial Inclusivity. The organization has a strong hold over field areas specifically, in the slum parts of Mumbai and Rural areas of Maharashtra for its interventions',
         ],
         cards: [
-          {
-            icon: '',
-            title: 'Dedicated To Large-Scale Change',
-            link: '#',
-            detail:
-              'The mission to improve the quality of education in India and ensure that all children not only attend but also thrive in school is being accomplished by working in collaboration with the government, local communities, parents, teachers, volunteers, and civil society members. Our programs aim to supplement rather than replace governmental efforts. They are implemented on a large scale to not only reach as many children as possible, but also to create an adoptable demonstration model for state governments.',
-          },
-          {
-            icon: '',
-            title: 'A Focus on Innovation',
-            link: '#',
-            detail:
-              "Pratham's strategies reconfigure teaching methodologies, break down traditional tactics, and challenge the current rote learning mechanisms in our schools. Our programs are innovative and outcome-driven. In its early years Pratham developed innovative teaching-learning approaches, materials, and measurement methods. In 2005, we pioneered a nationwide survey of schooling and learning that has had a major impact on national and international policy discussions.",
-          },
+          
         ],
       },
     },
     {
       id: 'photos',
-      label: 'Photos',
+      label: 'Board Members',
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     },
@@ -103,11 +88,7 @@ export default function AboutPage() {
       </div>
       <div className="flex flex-col gap-20  lg:px-28">
         <div className="flex flex-col px-4">
-          {/* <Switch className="mb-4" isSelected={isVertical} onValueChange={setIsVertical}>
-        Vertical
-      </Switch> */}
-
-          <div className="flex w-full flex-col">
+          <div className="flex w-full flex-col my-6">
             <Tabs
               aria-label="Dynamic tabs"
               items={tabs}
@@ -160,87 +141,6 @@ export default function AboutPage() {
               )}
             </Tabs>
           </div>
-        </div>
-        <div className="text-2xl w-4/5 leading-10  mx-auto   font-semibold dark:text-neutral-300 text-neutral-600">
-          <p className="mt-16">
-            With a deep passion for music and a strong grasp of the digital
-            landscape, we specialize in distributing your music across all major
-            streaming platforms, including Spotify, Apple Music, YouTube Music,
-            Amazon, and more.
-          </p>
-          <p className="mt-16">
-            Our mission is to bridge the gap between independent artists and a
-            global audience. Whether you're an emerging artist or an established
-            label, we provide seamless, reliable, and transparent distribution
-            services designed to elevate your reach and revenue.
-          </p>
-        </div>
-
-        <div className="">
-          <div className="flex flex-col sm:flex-row gap-2 justify-center mb-8">
-            <h1 className={`${title()} `}>What We Offer:</h1>
-
-            <h1
-              className={`${title()} text-lightThemePrimaryText dark:text-darkThemePrimaryText`}
-            >
-              your music
-            </h1>
-          </div>
-          <HoverEffect items={whatOffers} page={'distribution'} showIcons />
-        </div>
-        <div className="  px-4 sm:px-0">
-          <VideoPromoCard
-            image={singer}
-            heading={
-              <h1 className={`${title({ size: 'sm' })} font-semibold  `}>
-                Your Official Music{' '}
-                <span className="text-lightThemePrimaryText dark:text-darkThemePrimaryText">
-                  Release Partner
-                </span>
-              </h1>
-            }
-            details={`Launch your official music in style. We help you quickly
-                get your music videos live on the most popular social platforms
-                and earn royalties. We have you covered from setup and launch to
-                video uploads and rights management.`}
-            showPlateforms
-          />
-        </div>
-
-        <div className="h-[calc(100vh-6.625rem)] px-4 flex justify-center items-start flex-col">
-          <div className="flex flex-col gap-5 items-center mx-auto justify-center mb-8">
-            <h1 className={`${title()} `}>
-              Promote Your Music in All Major{' '}
-              <span
-                className={`sm:hidden leading-relaxed text-lightThemePrimaryText dark:text-darkThemePrimaryText`}
-              >
-                Social Media Channels
-              </span>
-            </h1>
-            <h1
-              className={`${title()} text-lightThemePrimaryText dark:text-darkThemePrimaryText hidden md:block`}
-            >
-              Social Media Channels
-            </h1>
-          </div>
-          <p className="text-2xl leading-10 mt-18 font-medium dark:text-neutral-400 text-neutral-500">
-            With a growing network of artists, producers, and labels, we take
-            pride in helping music creators thrive in the digital age. At MTrax
-            Digital Media, your sound matters — and we make sure the world hears
-            it.
-          </p>
-          <div className="socialmedia flex justify-around flex-wrap items-center gap-8 px-4 sm:px-0 sm:w-1/2 mx-auto  mt-12 icons">
-            <Instagram />
-            <FaceBook />
-            <Ticktock />
-            <Spotify />
-            <YouTube />
-          </div>
-          <h1
-            className={`${title({ size: 'sm' })} mt-20 text-lightThemeSecondryText dark:text-darkThemeSecondryText hidden md:block`}
-          >
-            Join the movement. Distribute with confidence. Grow with us.
-          </h1>
         </div>
       </div>
     </div>

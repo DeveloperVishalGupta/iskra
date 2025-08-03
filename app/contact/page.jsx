@@ -176,19 +176,17 @@ export default function ContactPage() {
               value={formData.mobile}
               onChange={handleChange}
             />
-            <Select
+            <Input
               name="position"
-              label="position"
-              placeholder="Which Position are you interested in?"
+              label="Position"
+              type="text"
               variant="faded"
+              placeholder="Which Position are you interested in?"
               isRequired
-              selectedKeys={[formData.preference]}
-              onSelectionChange={(keys) => handleSelectChange([...keys][0])}
-            >
-              {involmentPossion.map((item) => (
-                <SelectItem key={item.key}>{item.label}</SelectItem>
-              ))}
-            </Select>
+              isClearable
+              value={formData.name}
+              onChange={handleChange}
+            />
 
             <Textarea
               name="description"
@@ -217,83 +215,80 @@ export default function ContactPage() {
             </Button>
           </div>
         </div>
-         <div className="bg-white border border-slate-200 shadow-lg p-6 rounded-xl">
-            <h3 className="text-2xl font-semibold text-gray-800  mb-4">
-              Location
-            </h3>
-            <div className="text-neutral-700">
-              <p className="">MTrax Digital Media Office</p>
-              <p className="">D-50, IT Chauraha, Nirala Nagar,</p>
-              <p className="">Lucknow, Uttar Pradesh 226020</p>
-            </div>
-            <div className="text-end mt-3">
-              <CustomButton variant={'sm'} title={'Visit'} />
-            </div>
-        </div>
-         <div className="bg-white border p-6 border-slate-200 shadow-lg rounded-xl">
-            <h3 className="text-2xl font-semibold mb-4">Contact Info</h3>
-            <div className="grid text-center grid-cols-2">
-              {contactNumbers.map((item, index) => {
-                if (item.type === 1) {
-                  return (
-                    <div key={index}>
-                      <div className=" rounded-md  flex items-center justify-center gap-2 shadow-sm border-2 border-slate-200 my-2 mx-4 ">
-                        <PhoneIcon color={'#1f2937'} />
-                        <Link
-                          href={`tel:+91${item.phone}`}
-                          className="text-gray-800 py-2 block"
-                        >{`(+91) ${item.phone}`}</Link>
-                      </div>
-                    </div>
-                  );
-                } else {
-                  const message = encodeURIComponent(
-                    `Hi! I visited your website and would like to know more. Please assist me with my query.`
-                  );
-                  const whatsappUrl = `https://wa.me/91${item.phone}?text=${message}`;
-                  return (
-                    <div key={index}>
-                      <div className="border-slate-200 border-2 shadow-sm rounded-md flex items-center justify-center gap-2  my-2 mx-4 ">
-                        <WhatsappIcon />
-                        <Link
-                          target="_blank"
-                          href={whatsappUrl}
-                          className="text-gray-800 py-2 block"
-                        >{`(+91) ${item.phone}`}</Link>
-                      </div>
-                    </div>
-                  );
-                }
-              })}
-            </div>
-
-            <div className="m-4  ">
-              <Link
-                target="_blank"
-                href={`mailto:iskrateam15@gmail.com?subject=${encodeURIComponent('Music Service Inquiry')}&body=${encodeURIComponent(
-                  "Hello!! MTrax Digital Media, \n\n I'm interested in your services.\nCould you please share more details?\n\nHere's my contact info:\nPhone: +91 XXXXX XXXXX\nEmail: myEmail@gmail.com\n\nLooking forward to hearing from you. Thanks!"
-                )}`}
-                className="flex items-center lowercase transition-colors"
-              >
-              <Mail />
-              <span>
-                iskrateam15@gmail.com
-              </span>
-            </Link>
-            <div className='flex gap-1 items-center'>
-              <span className='me-2'>
-                 <Calender resorce={{
-                width: 24,
-                height:20
- }} />
-             </span>
-                <p className="">Monday - Saturday: 10:00 AM - 8:00 PM</p>
-            </div>
-            
-            </div>
-
-           
+        <div className="bg-white border border-slate-200 shadow-lg p-6 rounded-xl">
+          <h3 className="text-2xl font-semibold text-gray-800  mb-4">
+            Location
+          </h3>
+          <div className="text-neutral-700">
+            <p className="">MTrax Digital Media Office</p>
+            <p className="">D-50, IT Chauraha, Nirala Nagar,</p>
+            <p className="">Lucknow, Uttar Pradesh 226020</p>
           </div>
+          <div className="text-end mt-3">
+            <CustomButton variant={'sm'} title={'Visit'} />
+          </div>
+        </div>
+        <div className="bg-white border p-6 border-slate-200 shadow-lg rounded-xl">
+          <h3 className="text-2xl font-semibold mb-4">Contact Info</h3>
+          <div className="grid text-center grid-cols-2">
+            {contactNumbers.map((item, index) => {
+              if (item.type === 1) {
+                return (
+                  <div key={index}>
+                    <div className=" rounded-md  flex items-center justify-center gap-2 shadow-sm border-2 border-slate-200 my-2 mx-4 ">
+                      <PhoneIcon color={'#1f2937'} />
+                      <Link
+                        href={`tel:+91${item.phone}`}
+                        className="text-gray-800 py-2 block"
+                      >{`(+91) ${item.phone}`}</Link>
+                    </div>
+                  </div>
+                );
+              } else {
+                const message = encodeURIComponent(
+                  `Hi! I visited your website and would like to know more. Please assist me with my query.`
+                );
+                const whatsappUrl = `https://wa.me/91${item.phone}?text=${message}`;
+                return (
+                  <div key={index}>
+                    <div className="border-slate-200 border-2 shadow-sm rounded-md flex items-center justify-center gap-2  my-2 mx-4 ">
+                      <WhatsappIcon />
+                      <Link
+                        target="_blank"
+                        href={whatsappUrl}
+                        className="text-gray-800 py-2 block"
+                      >{`(+91) ${item.phone}`}</Link>
+                    </div>
+                  </div>
+                );
+              }
+            })}
+          </div>
+
+          <div className="m-4  ">
+            <Link
+              target="_blank"
+              href={`mailto:iskrateam15@gmail.com?subject=${encodeURIComponent('Music Service Inquiry')}&body=${encodeURIComponent(
+                "Hello!! MTrax Digital Media, \n\n I'm interested in your services.\nCould you please share more details?\n\nHere's my contact info:\nPhone: +91 XXXXX XXXXX\nEmail: myEmail@gmail.com\n\nLooking forward to hearing from you. Thanks!"
+              )}`}
+              className="flex items-center lowercase transition-colors"
+            >
+              <Mail />
+              <span>iskrateam15@gmail.com</span>
+            </Link>
+            <div className="flex gap-1 items-center">
+              <span className="me-2">
+                <Calender
+                  resorce={{
+                    width: 24,
+                    height: 20,
+                  }}
+                />
+              </span>
+              <p className="">Monday - Saturday: 10:00 AM - 8:00 PM</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="">

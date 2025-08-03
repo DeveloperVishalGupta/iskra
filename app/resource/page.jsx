@@ -17,8 +17,8 @@ export default function ResourcePage() {
         <div className=" mb-8 flex justify-center text-center md:text-start">
           <h1 className={title({})}>Annual Report</h1>
         </div>
-        <div className='mt-24'>
-        <UnderDev section={'annual report'} />
+        <div className="mt-24">
+          <UnderDev section={'annual report'} />
         </div>
       </div>
       <div className="px-4 flex justify-center text-center md:text-start">

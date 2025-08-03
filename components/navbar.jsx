@@ -1,50 +1,21 @@
-import {
-  Navbar as HeroUINavbar,
-  NavbarContent,
-  NavbarMenu,
-  NavbarMenuToggle,
-  NavbarBrand,
-  NavbarItem,
-  NavbarMenuItem,
-} from '@heroui/navbar';
-import { Kbd } from '@heroui/kbd';
-import { Link } from '@heroui/link';
-import { Input } from '@heroui/input';
+
 import { link as linkStyles } from '@heroui/theme';
 import NextLink from 'next/link';
 import clsx from 'clsx';
-
-import { GithubIcon, SearchIcon } from '../assets/icons/icons';
-import { ThemeSwitch } from './theme-switch';
 import { siteConfig } from '../config/site';
-import { YouTube } from '../assets/brand-Icons';
 import { useEffect, useState } from 'react';
 import { headings } from '../constant';
 import Image from 'next/image';
-import MTDM from '../assets/images/MTDM.png';
 import Iskra from '../assets/images/logos/Iskra.jpg';
-import { Button } from '@heroui/button';
 import CustomButton from './Button';
-import {
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  useDisclosure,
-} from '@heroui/modal';
-import PaymentComponent from './donate';
-// import Router from 'next/router';
 import { usePathname } from 'next/navigation';
 
 export const Navbar = () => {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const pageRoutes = siteConfig.pageRoutes;
   const [companyLinks, setCompanyLinks] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [query, setQuery] = useState('');
   const currentPage = usePathname();
-  // console.log();
 
   const handleChange = (e) => {
     const value = e.target.value;
